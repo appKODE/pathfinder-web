@@ -1,0 +1,56 @@
+{
+  "name": "pathfinder-web",
+  "version": "1.0.0",
+  "description": "Tool to change environments on the fly",
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "prepublish": "echo 'RUN PREPUBLISH SCRIPT'",
+    "preinstall": "echo 'RUN PREINSTALL SCRIPT'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "environment",
+    "mock",
+    "interceptor"
+  ],
+  "homepage": "https://github.com/todo",
+  "repository": {
+    "url": "git@https://github.com/todo",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/todo/issues"
+  },
+  "author": "KODE",
+  "contributors": [
+    {
+      "name": "Nikita Kovalchuk"
+    },
+    {
+      "name": "Alexander Chernov"
+    },
+    {
+      "name": "Natalia Semenova"
+    },
+    {
+      "name": "Andrey Trenkal"
+    },
+    {
+      "name": "Vladislav Panov"
+    },
+    {
+      "name": "Denis Gladky"
+    },
+    {
+      "name": "Andrey Kovalenok"
+    },
+    {
+      "name": "Victor Kulyabin"
+    }
+  ],
+  "license": "MIT"
+}

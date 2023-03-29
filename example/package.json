@@ -1,0 +1,32 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn link @kode-frontend/pathfinder-web-react && parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@kode-frontend/pathfinder-web-local-storage": "^1.0.1",
+    "@kode-frontend/pathfinder-web-open-api": "^0.1.1",
+    "@kode-frontend/pathfinder-web-react": "^0.2.0",
+    "react-app-polyfill": "^1.0.0"
+  },
+  "alias": {
+    "react": "../node_modules/react",
+    "react-dom": "../node_modules/react-dom/profiling",
+    "scheduler/tracing": "../node_modules/scheduler/tracing-profiling"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.8.4",
+    "parcel": "^1.12.3",
+    "postcss-modules": "^4.3.1",
+    "typescript": "^3.4.5"
+  },
+  "resolutions": {
+    "@babel/preset-env": "7.13.8"
+  }
+}

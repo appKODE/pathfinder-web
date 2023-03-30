@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { UrlMethod } from '@kode-frontend/pathfinder-web-core';
 import { ArrowDownIcon } from '../../../../icons';
 import { Method } from '../../../../atoms';
+import { UrlMethod } from '../../../../../../types';
 
 const Wrapper = styled.div`
   position: relative;

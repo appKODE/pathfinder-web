@@ -1,4 +1,4 @@
-import { UrlMethod } from '@kode-frontend/pathfinder-web-core';
+import { UrlMethod } from "../../../../types";
 
 export type TUrlItem = {
   id: string;

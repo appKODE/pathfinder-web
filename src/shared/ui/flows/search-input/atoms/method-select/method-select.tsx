@@ -100,8 +100,8 @@ export const MethodSelect = ({ methods, onSelectMethod }: Props) => {
             All methods
           </DropDownItem>
           {methods &&
-            [...methods].map((method) => (
-              <DropDownItem onClick={() => onHandleSelect(method)}>
+            [...methods].map((method, index) => (
+              <DropDownItem onClick={() => onHandleSelect(method)} key={index}>
                 <Method method={method} />
               </DropDownItem>
             ))}

@@ -1,10 +1,9 @@
 import intercept from 'fetch-intercept';
-import {
-  createTemplatesBySpec,
-  Pathfinder,
-} from '@kode-frontend/pathfinder-web-core';
+
 import { useEffect } from 'react';
-import { Header } from '@kode-frontend/pathfinder-web-core/dist/types';
+import { createTemplatesBySpec } from '../../lib';
+import { Header, Pathfinder } from '../../types';
+
 
 type TMergeGlobalEndEndpointHeadersArg = {
   globalHeaders: Header[];

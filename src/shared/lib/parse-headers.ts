@@ -1,4 +1,5 @@
-import { Header } from '@kode-frontend/pathfinder-web-core/dist/types';
+import { Header } from "../../types";
+
 
 export const parseHeaders = (value: string): Header[] => {
   if (!value) {

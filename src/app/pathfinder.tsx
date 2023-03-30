@@ -5,14 +5,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import {
-  createPathFinder,
-  DataResolver,
-  DataStorage,
-  EnvSpec,
-  Spec,
-  UrlSpec,
-} from '@kode-frontend/pathfinder-web-core';
+
 import styled, { ThemeProvider } from 'styled-components';
 
 import { theme } from '../ui/theme';
@@ -24,6 +17,8 @@ import { addConsoleActivation } from '../features';
 import { useRequestInterception } from '../processes';
 import { parseHeaders } from '../shared/lib';
 import { stringifyHeaders } from '../shared/lib/stringify-headers';
+import { DataResolver, DataStorage, EnvSpec, Spec, UrlSpec } from '../types';
+import { createPathFinder } from '../lib';
 
 const ActionWrapper = styled.div`
   position: fixed;

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { UrlMethod } from '../../../../../../types';
 
 import { ThinCloseIcon } from '../../../../icons';
 import { MethodSelect } from '../../atoms';
-import { UrlMethod } from '@kode-frontend/pathfinder-web-core';
 
 const Wrapper = styled.div`
   display: flex;

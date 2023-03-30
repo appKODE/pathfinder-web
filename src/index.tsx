@@ -2,3 +2,7 @@
 // see: https://github.com/storybookjs/storybook/issues/9556
 
 export { Pathfinder } from './app';
+
+export { openApiResolver } from './lib';
+
+export { storage } from './utils/storage';

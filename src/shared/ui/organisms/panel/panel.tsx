@@ -12,9 +12,9 @@ import {
   TUrlHeaders,
   TUrlItem,
 } from '../endpoints-list/types';
-import { UrlMethod } from '@kode-frontend/pathfinder-web-core';
 import { Box, Row } from '../../core';
 import { KeyValueField } from '../../molecules/key-value-field';
+import { UrlMethod } from '../../../../types';
 
 const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.main.light.normal};

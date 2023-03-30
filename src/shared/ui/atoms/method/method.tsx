@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { useTheme } from 'styled-components';
-import { UrlMethod } from '@kode-frontend/pathfinder-web-core';
+import { UrlMethod } from '../../../../types';
 
 const Wrapper = styled.span<{ $background: string }>`
   font-size: 12px;

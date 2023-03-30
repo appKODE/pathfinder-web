@@ -1,5 +1,7 @@
 import { getStorage } from './storage';
+import { parseJSON } from './utils/resolver';
 import {
+  DataResolver,
   EnvSpec,
   GlobalEnvGetter,
   GlobalEnvSetter,
@@ -19,6 +21,10 @@ import {
   getStorageAdapter,
   makeBuildUrl,
 } from './utils';
+
+export const openApiResolver: DataResolver = {
+  parse: parseJSON,
+};
 
 export function createTemplatesBySpec(
   urlList: UrlSpec[],
@@ -126,3 +132,5 @@ export const createPathFinder: PathfinderBuilder = ({
     setGlobalHeaders,
   };
 };
+
+

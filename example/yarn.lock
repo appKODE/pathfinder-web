@@ -905,13 +905,6 @@
   dependencies:
     "@kode-frontend/pathfinder-web-core" "^1.0.0"
 
-"@kode-frontend/pathfinder-web-open-api@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@kode-frontend/pathfinder-web-open-api/-/pathfinder-web-open-api-0.1.1.tgz#fe291d754872197744be2b0fa0774ece4ce5f656"
-  integrity sha512-n+uk+yEWM2u7vPvtxjRhdSgKfWv7nzbR1xlJoOsMTLOmahM9Q2N6BsmjWqNFpp5HE2weN5r9iGdOdcMHgtvUYQ==
-  dependencies:
-    "@kode-frontend/pathfinder-web-core" "^0.0.11"
-
 "@kode-frontend/pathfinder-web-react@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@kode-frontend/pathfinder-web-react/-/pathfinder-web-react-0.2.0.tgz#f1b6e917e6c306c826d05608ab8b33409bf14a57"

@@ -4,7 +4,7 @@ import { MethodSelect } from '.';
 type Props = Partial<ComponentProps<typeof MethodSelect>>;
 
 const args: Props = {
-  methods: ['get', 'post', 'update', 'delete', 'patch'],
+  methods: ['GET', 'POST', 'DELETE', 'PATCH'],
 };
 
 export default {

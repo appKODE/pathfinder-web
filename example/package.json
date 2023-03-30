@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@kode-frontend/pathfinder-web-local-storage": "^1.0.1",
-    "@kode-frontend/pathfinder-web-open-api": "^0.1.1",
     "@kode-frontend/pathfinder-web-react": "^0.2.0",
     "react-app-polyfill": "^1.0.0"
   },

@@ -1,4 +1,4 @@
-import { FindSpecFn, UrlBuilder, UrlEnvGetter } from '../types';
+import { FindSpecFn, UrlBuilder, UrlEnvGetter } from '../../types';
 import { CreateUrlFn } from './create-url';
 
 import { ParseUrlFn } from './parse-url';

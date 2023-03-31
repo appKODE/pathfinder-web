@@ -1,4 +1,4 @@
-import { DataUrl } from '../types';
+import { DataUrl } from '../../types';
 
 export type CreateUrlFn = (url: DataUrl) => string | null;
 

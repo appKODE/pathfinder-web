@@ -1,6 +1,6 @@
-import { ParseResult, UrlSpec } from '../types';
 import { isOpenApiSpec, isOperationType } from './validators';
 import { operationMap } from './utils';
+import { ParseResult, Server, UrlSpec } from '../../types';
 
 export function parseJSON(json: unknown): ParseResult {
   if (!isOpenApiSpec(json)) {
@@ -11,7 +11,7 @@ export function parseJSON(json: unknown): ParseResult {
 
   const urlTemplates = Object.keys(json.paths);
   for (const urlTemplate of urlTemplates) {
-    const methods = Object.keys(json.paths[urlTemplate]);
+    const methods = Object.keys(json.paths[urlTemplate]) as Array<keyof typeof operationMap>;
 
     for (const method of methods) {
       if (isOperationType(method)) {
@@ -30,7 +30,7 @@ export function parseJSON(json: unknown): ParseResult {
 
   return {
     envs: [
-      ...json.servers.map((server, index) => ({
+      ...json.servers.map((server: Server, index: number) => ({
         id: index.toString(),
         name: server.description || server.url,
         baseUrl: server.url,

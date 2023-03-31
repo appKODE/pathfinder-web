@@ -1,5 +1,5 @@
 import UrlPattern from 'url-pattern';
-import { FindSpecFn, UrlSpec } from '../types';
+import { FindSpecFn, UrlSpec } from '../../types';
 
 /**
  *

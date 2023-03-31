@@ -87,9 +87,7 @@ Create a new provider component with Pathfinder. Import `storage` and `openApiRe
 
 ```jsx
 import { ReactNode } from 'react';
-import { Pathfinder } from '@kode-frontend/pathfinder-web-react';
-import { storage } from '@kode-frontend/pathfinder-web-local-storage';
-import { openApiResolver } from '@kode-frontend/pathfinder-web-open-api';
+import { Pathfinder, openApiResolver, storage } from '@kode-frontend/pathfinder-web-react';
 
 type Props = {
   children: ReactNode,
@@ -112,10 +110,8 @@ Create `PathfinderProvider`, for example
 
 ```jsx
 import * as React from 'react';
-import { Pathfinder } from '@kode-frontend/pathfinder-web-react';
+import { Pathfinder, openApiResolver, storage } from '@kode-frontend/pathfinder-web-react';
 
-import storage from '@kode-frontend/pathfinder-web-local-storage';
-import { openApiResolver } from '@kode-frontend/pathfinder-web-open-api';
 
 type Props = {
   children: React.ReactNode,

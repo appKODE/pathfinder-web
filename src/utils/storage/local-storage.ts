@@ -1,4 +1,4 @@
-import { DataStorageItemGetter, DataStorageItemSetter } from "../types";
+import { DataStorageItemGetter, DataStorageItemSetter } from '../../types';
 
 export const setItem: DataStorageItemSetter = (
   key,

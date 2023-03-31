@@ -1,4 +1,4 @@
-import { StorageAdapterFn } from '../types';
+import { StorageAdapterFn } from '../../types';
 
 export const getStorageAdapter: StorageAdapterFn = (data, storageKey) => ({
   getItem: (key: string) => data.getItem(key, storageKey),

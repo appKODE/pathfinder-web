@@ -14,7 +14,7 @@ const args: Props = {
       .fill(undefined)
       .map((_, index) => ({
         id: index.toString(),
-        method: `${index % 2 === 0 ? 'GET' : 'POST'}`,
+        method: `${index % 2 === 0 ? 'GET' : 'POST'}` as const,
         template: `/user/${index}/list`,
         name: 'Endpoint Name',
       })),

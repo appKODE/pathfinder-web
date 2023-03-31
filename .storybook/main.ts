@@ -18,7 +18,7 @@ const config: StorybookConfig = {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
-      propFilter: prop =>
+      propFilter: (prop: { parent: { fileName: string; }; }) =>
         prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
     },
   },
@@ -29,12 +29,5 @@ const config: StorybookConfig = {
   features: {
     postcss: false,
   },
-  refs: {
-    'design-system': {
-      title: 'Storybook Design System',
-      url: 'https://5ccbc373887ca40020446347-yldsqjoxzb.chromatic.com',
-    },
-  },
-  
 };
 module.exports = config;

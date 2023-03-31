@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Button } from '../../atoms';
 import { Header, UploadSpec, RadioGroup } from '../../molecules';
-import { EndpointsList } from '..';
+import { EndpointsList } from '../endpoints-list';
 import { TRadioOptions } from '../../atoms/radio-input/types';
 import { TConfig } from './types';
 import { SearchInput } from '../../flows';

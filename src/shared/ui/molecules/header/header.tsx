@@ -35,7 +35,7 @@ export const Header = memo(({ children, onClose }: Props) => {
     <Wrapper>
       <Title>{children}</Title>
       <ActionWrapper>
-        <Button onClick={onClose} transparent title={'Close'}>
+        <Button onClick={onClose} transparent title="Close">
           <CloseIcon
             width={16}
             height={16}

@@ -1,9 +1,10 @@
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { Meta, Story } from '@storybook/react';
-import Component from './button';
+import { Button } from './button';
 
-export default { title: 'UI/atoms/Button', component: Component } as Meta;
+export default { title: 'UI/atoms/Button', component: Button } as Meta;
 
-export const Button: Story<React.ComponentProps<typeof Component>> = (
-  props
-) => <Component {...props}>Text</Component>;
+export const ButtonStory: Story<React.ComponentProps<typeof Button>> = () => (
+  <Button>Text</Button>
+);

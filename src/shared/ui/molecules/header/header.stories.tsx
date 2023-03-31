@@ -1,14 +1,16 @@
-import { ComponentProps } from 'react';
-import { Meta } from '@storybook/react';
-import { Header as PanelHeader } from './header';
-
-type Props = Partial<ComponentProps<typeof PanelHeader>>;
-const args: Props = {};
+import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Meta, Story } from '@storybook/react';
+import { Header } from './header';
 
 export default {
   title: 'UI/molecules/Header',
-  component: PanelHeader,
-  args: args,
+  component: Header,
+  args: {
+    onClick: () => null,
+  },
 } as Meta;
 
-export const Basic = PanelHeader;
+export const HeaderStory: Story<React.ComponentProps<typeof Header>> = args => (
+  <Header {...args}>Children</Header>
+);

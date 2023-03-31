@@ -26,9 +26,9 @@ export const RadioGroup = ({
   onChange,
 }: TRadiogroupProps) => (
   <Wrapper>
-    {items.map((item) => (
+    {items.map((item, index) => (
       <RadioInput
-        key={item.value}
+        key={index}
         id={id}
         value={item.value}
         label={item.label}

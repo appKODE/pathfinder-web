@@ -25,6 +25,7 @@ const args: Props = {
     7: 'local',
     8: 'dev',
   },
+  urlHeaders: { '0': 'POST', '1': 'GET' },
 };
 
 export default {

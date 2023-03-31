@@ -1,15 +1,16 @@
-import { ComponentProps } from 'react';
-import { Method } from '.';
-
-type Props = Partial<ComponentProps<typeof Method>>;
-
-const args: Props = {};
+import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Meta, Story } from '@storybook/react';
+import { Method } from './method';
 
 export default {
-  title: 'Method',
+  title: 'UI/atoms/Method',
   component: Method,
-  argTypes: {},
-  args,
-};
+  args: {
+    method: 'POST',
+  },
+} as Meta;
 
-export const Basic = Method;
+export const MethodStory: Story<React.ComponentProps<typeof Method>> = args => (
+  <Method {...args} />
+);

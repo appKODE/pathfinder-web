@@ -1,5 +1,5 @@
 import { getStorage } from './storage';
-import { parseJSON } from './utils/resolver';
+import { parseJSON } from './utils/open-api';
 import {
   DataResolver,
   EnvSpec,
@@ -20,7 +20,7 @@ import {
   findSpec,
   getStorageAdapter,
   makeBuildUrl,
-} from './utils';
+} from './utils/web-core';
 
 export const openApiResolver: DataResolver = {
   parse: parseJSON,
@@ -73,7 +73,8 @@ export const createPathFinder: PathfinderBuilder = ({
   const storage = getStorage(getStorageAdapter(data, dataKey));
 
   const getGlobalEnv: GlobalEnvGetter = () => storage.getGlobalEnv();
-  const getUrlEnv: UrlEnvGetter = urlId => storage.getEndpointEnv(urlId) || getGlobalEnv();
+  const getUrlEnv: UrlEnvGetter = urlId =>
+    storage.getEndpointEnv(urlId) || getGlobalEnv();
 
   const buildUrl = makeBuildUrl({
     specGetter: findSpec,
@@ -132,5 +133,3 @@ export const createPathFinder: PathfinderBuilder = ({
     setGlobalHeaders,
   };
 };
-
-

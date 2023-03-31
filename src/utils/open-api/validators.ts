@@ -1,3 +1,5 @@
+/* eslint-disable no-prototype-builtins */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import {
   CookieParameter,
   HeaderParameter,
@@ -9,7 +11,7 @@ import {
   Paths,
   QueryParameter,
   Server,
-} from '../types';
+} from '../../types';
 
 export function isOperationType(val: string): val is OperationType {
   return /^(get|put|post|delete|options|head|patch|trace)$/.test(val);
@@ -66,10 +68,10 @@ export function isOperation(obj: any): obj is Operation {
 
 export function isParameter(obj: any): obj is Parameter {
   return (
-    isQueryParameter(obj)
-    || isPathParameter(obj)
-    || isHeaderParameter(obj)
-    || isCookieParameter(obj)
+    isQueryParameter(obj) ||
+    isPathParameter(obj) ||
+    isHeaderParameter(obj) ||
+    isCookieParameter(obj)
   );
 }
 
@@ -98,8 +100,8 @@ export function isPaths(obj: any): obj is Paths {
 
 export function isServers(obj: any): obj is Server[] {
   return (
-    Array.isArray(obj)
-    && obj.reduce<boolean>((previous, server) => {
+    Array.isArray(obj) &&
+    obj.reduce<boolean>((previous, server) => {
       if (!server.hasOwnProperty('url') || typeof server['url'] !== 'string') {
         return false;
       }

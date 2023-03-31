@@ -1,4 +1,4 @@
-import { DataUrl } from '../types';
+import { DataUrl } from '../../types';
 
 export type ParseUrlFn = (val: string) => DataUrl | null;
 

@@ -14,11 +14,13 @@
     "@typescript-eslint/no-throw-literal": "off",
     "no-restricted-syntax": "off",
     "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-empty-interface": "off",
     "import/prefer-default-export": "off",
     "arrow-parens": "off",
     "object-curly-newline": "off",
     "operator-linebreak": ["error", "after"],
-    "max-len": "off"
+    "max-len": "off",
+    "implicit-arrow-linebreak": "off"
   },
   "globals": {
     "window": true,

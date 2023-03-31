@@ -1,6 +1,7 @@
 import { ComponentProps } from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { EndpointsList } from './endpoints-list';
+import React from 'react';
 
 type Props = ComponentProps<typeof EndpointsList>;
 type PartialProps = Partial<Props>;
@@ -32,12 +33,14 @@ const args: PartialProps = {
 };
 
 export default {
-  title: 'Pathfinder/organisms/EndpointList',
+  title: 'UI/organisms/EndpointsList',
   component: EndpointsList,
-  args,
+  args: args,
   argTypes: {
     onChange: { action: 'onChange' },
   },
 } as Meta;
 
-export const Basic = EndpointsList
+export const EndpointsListStory: Story<
+  React.ComponentProps<typeof EndpointsList>
+> = args => <EndpointsList {...args} headers={{ '0': 'POST', '1': 'GET' }} />;

@@ -1,15 +1,16 @@
-import { ComponentProps } from 'react';
-import { Args, Meta, Story } from '@storybook/react';
-import Component from './panel-button';
-
-type Props = ComponentProps<typeof Component>;
-type StoryProps<T> = T extends {} ? T : Args;
+import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Meta, Story } from '@storybook/react';
+import { PanelButton } from './panel-button';
 
 export default {
-  title: 'UI/atoms/Panel Button',
-  component: Component,
-} as Meta<StoryProps<Props>>;
+  title: 'UI/atoms/PanelButton',
+  component: PanelButton,
+  args: {
+    onClick: () => null,
+  },
+} as Meta;
 
-export const PanelButton: Story<StoryProps<Props>> = props => (
-  <Component {...props} />
-);
+export const PanelButtonStory: Story<
+  React.ComponentProps<typeof PanelButton>
+> = args => <PanelButton {...args} />;

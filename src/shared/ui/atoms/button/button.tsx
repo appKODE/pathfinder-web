@@ -61,12 +61,11 @@ type Props = {
 export const Button = memo(
   ({ children, title, transparent, active, onClick }: Props) => {
     const theme = useTheme();
-    const variant: TButtonVariant = active
-      ? 'active'
-      : transparent
-      ? 'transparent'
-      : 'normal';
-
+    const variant: TButtonVariant = active ?
+      'active' :
+      transparent ?
+        'transparent' :
+        'normal';
     const colors: Record<TButtonVariant, TButtonColors> = {
       active: {
         background: theme.colors.main.secondary.normal,
@@ -97,5 +96,5 @@ export const Button = memo(
         {children}
       </ButtonWrapper>
     );
-  }
+  },
 );

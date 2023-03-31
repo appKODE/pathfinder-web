@@ -1,29 +1,36 @@
 {
   "root": true,
-  "parser": "@typescript-eslint/parser",
   "extends": [
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "airbnb-typescript"
+    "react-app",
+    "react-app/jest",
+    "plugin:prettier/recommended",
+    "plugin:import/typescript",
+    "plugin:effector/recommended",
+    "plugin:effector/scope"
   ],
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["prettier", "testing-library", "effector"],
+  "overrides": [
+    // Only uses Testing Library lint rules in test files
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:testing-library/react"],
+      "rules": {
+        "testing-library/render-result-naming-convention": "off"
+      }
+    },
+    {
+      "files": ["**/*.stories.*"],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
+      }
+    }
+  ],
   "rules": {
-    "linebreak-style": 0,
-    "@typescript-eslint/dot-notation": "off",
-    "@typescript-eslint/no-implied-eval": "off",
-    "@typescript-eslint/no-throw-literal": "off",
-    "no-restricted-syntax": "off",
-    "@typescript-eslint/no-use-before-define": "off",
-    "@typescript-eslint/no-empty-interface": "off",
-    "import/prefer-default-export": "off",
-    "arrow-parens": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": ["error", "after"],
-    "max-len": "off",
-    "implicit-arrow-linebreak": "off"
-  },
-  "globals": {
-    "window": true,
-    "document": true
+    "import/no-unresolved": "error",
+    "react/display-name": "off",
+    "curly": "error"
   }
 }

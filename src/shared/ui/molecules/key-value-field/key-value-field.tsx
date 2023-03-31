@@ -73,7 +73,7 @@ export const KeyValueField = ({
       {isOpen && (
         <DropArea>
           <TextArea
-            onChange={(e) => {
+            onChange={e => {
               setValue(e.target.value);
             }}
             placeholder={placeholder}

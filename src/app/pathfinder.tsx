@@ -22,8 +22,8 @@ import { createPathFinder } from '../lib';
 
 const ActionWrapper = styled.div`
   position: fixed;
-  right: 3px;
-  bottom: 3px;
+  right: 9px;
+  bottom: 9px;
   z-index: 10;
   width: 64px;
   height: 64px;
@@ -44,7 +44,12 @@ const Content = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 25;
+<<<<<<< Updated upstream
   padding: 16px;
+=======
+  margin: 16px;
+  height: 90%;
+>>>>>>> Stashed changes
   color: ${({ theme }) => theme.colors.main.dark.normal};
 
   * {
@@ -95,7 +100,7 @@ export const Pathfinder = ({
   }, [resolver, storage]);
   const [spec, setSpec] = useState<Spec | null>(module.getSpec());
   const [globalHeaders, setGlobalHeaders] = useState<string>(
-    stringifyHeaders(module.getGlobalHeaders())
+    stringifyHeaders(module.getGlobalHeaders()),
   );
 
   const endpointsHeadersDefault =
@@ -104,7 +109,7 @@ export const Pathfinder = ({
         ...acc,
         [endpoint.id]: stringifyHeaders(module.getEndpointHeaders(endpoint.id)),
       }),
-      {}
+      {},
     ) || {};
 
   const [endpointsHeaders, setEndpointsHeaders] = useState<
@@ -121,7 +126,7 @@ export const Pathfinder = ({
   useRequestInterception(module, isActive || false);
 
   const handleToggle = useCallback(() => {
-    setOpen((prevState) => !prevState);
+    setOpen(prevState => !prevState);
   }, []);
 
   const handleChangeDefaultEnv = (envId: string | null) => {
@@ -153,7 +158,7 @@ export const Pathfinder = ({
 
   const initialUrlValues: Record<string, string> = {};
 
-  config.urlList.forEach((url) => {
+  config.urlList.forEach(url => {
     const envId = module.getUrlEnv(url.id);
     initialUrlValues[url.id] = envId || '';
   });
@@ -167,7 +172,7 @@ export const Pathfinder = ({
   const onChangeEndpointHeadersHandler = (value: string, id: string) => {
     const headers = parseHeaders(value);
 
-    setEndpointsHeaders((prev) => ({ ...prev, [id]: value }));
+    setEndpointsHeaders(prev => ({ ...prev, [id]: value }));
     module.setEndpointHeaders(id, headers);
   };
 
@@ -179,7 +184,7 @@ export const Pathfinder = ({
       </ActionWrapper>
       {isOpen && (
         <Container>
-          <Overlay />
+          <Overlay onClick={() => setOpen(false)} />
           <Content>
             <Panel
               urlHeaders={endpointsHeaders}

@@ -1,5 +1,5 @@
 import { UrlSpec } from '../types';
-import { findSpec } from '../utils/web-core';
+import { findSpec } from '../features/web-core';
 
 export const specSimple: UrlSpec = {
   id: 'get-user-content',

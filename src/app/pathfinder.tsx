@@ -44,12 +44,8 @@ const Content = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 25;
-<<<<<<< Updated upstream
-  padding: 16px;
-=======
   margin: 16px;
   height: 90%;
->>>>>>> Stashed changes
   color: ${({ theme }) => theme.colors.main.dark.normal};
 
   * {

@@ -5,4 +5,4 @@ export { Pathfinder } from './app';
 
 export { openApiResolver } from './lib';
 
-export { storage } from './utils/storage';
+export { storage } from './features/storage';

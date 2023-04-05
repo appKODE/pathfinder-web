@@ -1,5 +1,5 @@
 import { getStorage } from './storage';
-import { parseJSON } from './utils/open-api';
+import { parseJSON } from './features/open-api';
 import {
   DataResolver,
   EnvSpec,
@@ -20,7 +20,7 @@ import {
   findSpec,
   getStorageAdapter,
   makeBuildUrl,
-} from './utils/web-core';
+} from './features/web-core';
 
 export const openApiResolver: DataResolver = {
   parse: parseJSON,

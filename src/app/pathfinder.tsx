@@ -13,7 +13,7 @@ import { PanelButton } from '../shared/ui/atoms';
 import { Panel } from '../shared/ui/organisms';
 import { TPanelEnv, TPanelUrl } from '../shared/ui/organisms/panel/types';
 
-import { addConsoleActivation } from '../features';
+import { addConsoleActivation } from '../features/hidden-activation';
 import { useRequestInterception } from '../processes';
 import { parseHeaders } from '../shared/lib';
 import { stringifyHeaders } from '../shared/lib/stringify-headers';
@@ -40,9 +40,6 @@ const Container = styled.div`
 
 const Content = styled.div`
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 25;
   margin: 16px;
   height: 90%;

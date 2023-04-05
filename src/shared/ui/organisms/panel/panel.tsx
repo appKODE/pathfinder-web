@@ -21,6 +21,7 @@ const Wrapper = styled.div`
   border-radius: 4px;
   overflow: hidden;
   padding: 6px 12px;
+  height: 100%;
 `;
 
 const DefaultControls = styled.table`
@@ -88,6 +89,12 @@ export const Panel = ({
     setSearchValue(value);
   };
 
+  const handleEscButton = (e: KeyboardEvent) => {
+    if (!e.repeat && e.code === "Escape") {
+      onClose()
+    }
+  }
+
   const environments = useMemo<TRadioOptions[]>(
     () =>
       config.envList.map((env) => ({
@@ -123,6 +130,11 @@ export const Panel = ({
       )
     );
   }, [searchValue, filteredMethods]);
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleEscButton)
+    return () => document.removeEventListener('keydown', handleEscButton)
+  },[])
 
   return (
     <Wrapper>

@@ -1,4 +1,4 @@
-import { createUrl } from '../utils/web-core';
+import { createUrl } from '../features/web-core';
 import {
   parsedUrl,
   parsedUrl2,

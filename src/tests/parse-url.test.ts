@@ -1,4 +1,4 @@
-import { parseUrl } from '../utils/web-core';
+import { parseUrl } from '../features/web-core';
 import { parsedUrl, url } from './mocks';
 
 describe('parseUrl test', () => {

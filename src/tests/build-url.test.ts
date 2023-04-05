@@ -1,5 +1,10 @@
 import { UrlSpec } from '../types';
-import { createUrl, findSpec, parseUrl, makeBuildUrl } from '../utils/web-core';
+import {
+  createUrl,
+  findSpec,
+  parseUrl,
+  makeBuildUrl,
+} from '../features/web-core';
 
 export const specSimple: UrlSpec = {
   id: 'get-user-content',

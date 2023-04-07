@@ -1,4 +1,4 @@
-import { theme } from '../../../../ui/theme';
+import { theme } from '../../../../shared/theme';
 
 export type TRadioOptions = {
   label: string;

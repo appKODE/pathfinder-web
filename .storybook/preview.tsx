@@ -2,7 +2,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Story } from '@storybook/react';
-import { theme } from '../src/ui/theme';
+import { theme } from '../src/shared/theme';
 import { StorybookGlobalStyles } from './storybook-global-styles';
 
 export const parameters = {

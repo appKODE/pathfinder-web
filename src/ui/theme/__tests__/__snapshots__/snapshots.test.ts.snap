@@ -364,7 +364,7 @@ exports[`Storyshots UI/organisms/EndpointsList Endpoints List Story 1`] = `
 
 exports[`Storyshots UI/organisms/Panel Basic 1`] = `
 <div
-  className="sc-bZkfAO eIozNj"
+  className="sc-bZkfAO kFnxAn"
 >
   <div
     className="sc-hAZoDl gfzPfq"

@@ -67,6 +67,7 @@ export const createPathFinder: PathfinderBuilder = ({
   resolver,
   data,
   dataKey,
+  basePath,
 }) => {
   const spec = createSpec();
 
@@ -81,6 +82,7 @@ export const createPathFinder: PathfinderBuilder = ({
     urlEnvGetter: getUrlEnv,
     createUrl,
     parseUrl,
+    basePath,
   });
 
   const setGlobalEnv: GlobalEnvSetter = envId => {

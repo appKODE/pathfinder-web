@@ -68,6 +68,7 @@ type PathfinderProviderProps = {
   resolver: DataResolver;
   dataKey: string;
   active?: boolean;
+  basePath: string;
 };
 
 const toPanelUrl = (url: UrlSpec): TPanelUrl => ({
@@ -87,9 +88,10 @@ export const Pathfinder = ({
   storage,
   dataKey,
   active,
+  basePath,
 }: PathfinderProviderProps) => {
   const module = useMemo(() => {
-    return createPathFinder({ data: storage, dataKey, resolver });
+    return createPathFinder({ data: storage, dataKey, resolver, basePath });
   }, [resolver, storage]);
   const [spec, setSpec] = useState<Spec | null>(module.getSpec());
   const [globalHeaders, setGlobalHeaders] = useState<string>(
@@ -116,7 +118,7 @@ export const Pathfinder = ({
     addConsoleActivation(setActive);
   }, [setActive]);
 
-  useRequestInterception(module, isActive || false);
+  useRequestInterception(module, isActive || false, basePath);
 
   const handleToggle = useCallback(() => {
     setOpen(prevState => !prevState);

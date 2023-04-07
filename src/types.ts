@@ -70,6 +70,7 @@ export type FindSpecFn = (
   templatesBySpec: Map<UrlSpec, UTLTemplate>,
   method: string,
   url: string,
+  basePath: string,
 ) => UrlSpec | null;
 
 export type Pathfinder = {
@@ -104,6 +105,7 @@ export type PathfinderBuilderOptions = {
   resolver: DataResolver;
   data: DataStorage;
   dataKey: string;
+  basePath: string;
 };
 
 export type PathfinderBuilder = (

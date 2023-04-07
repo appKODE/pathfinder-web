@@ -23,7 +23,9 @@ export const makeBuildUrl: UrlBuilderFabric =
     const urlSpec = specGetter(templatesBySpec, method, url, basePath);
     const parsedUrl = parseUrl(url);
 
-    const prefix = new URL(basePath).pathname
+    const posiblePrefix = new URL(basePath).pathname;
+    const prefix = posiblePrefix === '/' ? '' : posiblePrefix; // url.pathname если адресс вида https://dev.ru/ выдает '/'
+    // А при https://dev.ru/api/, api/
 
     if (!urlSpec || !parsedUrl) {
       return url;
@@ -42,8 +44,7 @@ export const makeBuildUrl: UrlBuilderFabric =
       }
     }
 
-    parsedUrl.path = parsedUrl.path.replace(prefix, '/'); // Тут замена на / так как если префикса нет,
-    // то new URL().pathname возвращает / и она заменяется
+    parsedUrl.path = parsedUrl.path.replace(prefix, '');
     const result = createUrl({ ...parsedUrl });
 
     return result || url;

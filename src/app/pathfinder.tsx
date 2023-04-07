@@ -8,7 +8,7 @@ import React, {
 
 import styled, { ThemeProvider } from 'styled-components';
 
-import { theme } from '../ui/theme';
+import { theme } from '../shared/theme';
 import { PanelButton } from '../shared/ui/atoms';
 import { Panel } from '../shared/ui/organisms';
 import { TPanelEnv, TPanelUrl } from '../shared/ui/organisms/panel/types';

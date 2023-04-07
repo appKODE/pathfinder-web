@@ -209,9 +209,10 @@ Now, anytime you make changes to your library in `/src` or to the example app's 
 ## TODO
 
 - [x] replace css modules with styled components
-- [ ] add storybook
+- [x] add storybook
 - [ ] refactor components
 - [ ] add usage examples
+- [ ] add multy specification files support
 
 ## License
 

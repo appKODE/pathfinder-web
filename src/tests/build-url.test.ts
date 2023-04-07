@@ -47,7 +47,14 @@ const buildUrl = makeBuildUrl({
   createUrl,
   parseUrl,
   basePath: 'https://domain.dev',
+});
 
+const buildUrlWithApi = makeBuildUrl({
+  specGetter: findSpec,
+  urlEnvGetter: getUrlEnvMock,
+  createUrl,
+  parseUrl,
+  basePath: 'https://domain.dev/api',
 });
 
 describe('Test for buildUrl', () => {
@@ -59,6 +66,25 @@ describe('Test for buildUrl', () => {
       method: 'GET',
       url,
       envSpecs: [],
+    });
+
+    expect(result).toEqual(url);
+  });
+
+  it('Base with api', () => {
+    const url =
+      'https://domain.dev/user/v2/customers/some-path-param/?page=1&pageSize=3';
+    const result = buildUrlWithApi({
+      templatesBySpec,
+      method: 'GET',
+      url,
+      envSpecs: [
+        {
+          id: 'dev',
+          name: 'dev',
+          baseUrl: 'https://some-dev-base-path.dev/api',
+        },
+      ],
     });
 
     expect(result).toEqual(url);

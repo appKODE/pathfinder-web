@@ -47,6 +47,7 @@ describe('parseUrl test', () => {
       templatesBySpec,
       'GET',
       'https://domain.dev/user/v2/content/?group=admin#fragment',
+      'https://domain.dev',
     );
 
     expect(result).toEqual(specSimple);
@@ -57,6 +58,7 @@ describe('parseUrl test', () => {
       templatesBySpec,
       'GET',
       'https://domain.dev/user/v2/customers/some-path-param/?page=1&pageSize=3',
+      'https://domain.dev',
     );
 
     expect(result).toEqual(specWithPathParam);
@@ -67,6 +69,7 @@ describe('parseUrl test', () => {
       templatesBySpec,
       'GET',
       'https://domain.dev/user/v2/customers/search/some-search-query/?page=1&pageSize=3',
+      'https://domain.dev',
     );
 
     expect(result).toEqual(specWithWithPathParamSearch);
@@ -77,6 +80,7 @@ describe('parseUrl test', () => {
       templatesBySpec,
       'GET',
       'https://domain.dev/user/v2/customers/search/without-last-slash?page=1&pageSize=3',
+      'https://domain.dev',
     );
 
     expect(result).toEqual(specWithWithPathParamSearch);
@@ -87,6 +91,7 @@ describe('parseUrl test', () => {
       templatesBySpec,
       'GET',
       'https://domain.dev/user/v2/customers/search/separated/some-search-query/?page=1&pageSize=3',
+      'https://domain.dev',
     );
 
     expect(result).toEqual(specWithSeparatedPathParam);

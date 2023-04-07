@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { createTemplatesBySpec } from '../../lib';
 import { Header, Pathfinder } from '../../types';
 
-
 type TMergeGlobalEndEndpointHeadersArg = {
   globalHeaders: Header[];
   endpointHeaders: Header[];
@@ -20,7 +19,7 @@ const mergeGlobalAndEndpointHeaders = ({
   }
 
   return globalHeaders.reduce((acc, current) => {
-    const endpointHeader = endpointHeaders.find((h) => h.key === current.key);
+    const endpointHeader = endpointHeaders.find(h => h.key === current.key);
 
     const headerValue = endpointHeader?.value || current.value;
 
@@ -30,7 +29,8 @@ const mergeGlobalAndEndpointHeaders = ({
 
 export function useRequestInterception(
   pathfinder: Pathfinder,
-  active: boolean
+  active: boolean,
+  basePath: string,
 ) {
   // fetch
   useEffect(() => {
@@ -41,7 +41,7 @@ export function useRequestInterception(
     const unregister = intercept.register({
       request(
         url: string,
-        config: RequestInit | undefined
+        config: RequestInit | undefined,
       ): Promise<any[]> | any[] {
         const spec = pathfinder.getSpec();
 
@@ -52,7 +52,7 @@ export function useRequestInterception(
         const method = config?.method || 'GET';
 
         const endpointSpec = templatesBySpec
-          ? pathfinder.findSpec(templatesBySpec, method, url)
+          ? pathfinder.findSpec(templatesBySpec, method, url, basePath)
           : null;
 
         const endpointHeaders: Header[] = endpointSpec
@@ -101,7 +101,7 @@ export function useRequestInterception(
 
     XMLHttpRequest.prototype.open = function (
       method: string,
-      url: string | URL
+      url: string | URL,
     ) {
       const urlString = typeof url === 'string' ? url : url.toString();
       const spec = pathfinder.getSpec();
@@ -111,7 +111,12 @@ export function useRequestInterception(
         : null;
 
       const endpointSpec = templatesBySpec
-        ? pathfinder.findSpec(templatesBySpec, method.toUpperCase(), urlString)
+        ? pathfinder.findSpec(
+            templatesBySpec,
+            method.toUpperCase(),
+            urlString,
+            basePath,
+          )
         : null;
 
       const endpointHeaders: Header[] = endpointSpec
@@ -138,7 +143,7 @@ export function useRequestInterception(
 
       open.apply(this, arguments as any);
 
-      Object.getOwnPropertyNames(newHeaders).forEach((header) => {
+      Object.getOwnPropertyNames(newHeaders).forEach(header => {
         if (newHeaders[header]) {
           setRequestHeader.apply(this, [header, newHeaders[header]]);
         }

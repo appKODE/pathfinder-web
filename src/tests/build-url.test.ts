@@ -46,6 +46,8 @@ const buildUrl = makeBuildUrl({
   urlEnvGetter: getUrlEnvMock,
   createUrl,
   parseUrl,
+  basePath: 'https://domain.dev',
+
 });
 
 describe('Test for buildUrl', () => {

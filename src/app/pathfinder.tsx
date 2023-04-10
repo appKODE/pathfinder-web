@@ -24,7 +24,7 @@ const ActionWrapper = styled.div`
   position: fixed;
   right: 9px;
   bottom: 9px;
-  z-index: 10;
+  z-index: 9999999;
   width: 64px;
   height: 64px;
 `;
@@ -177,27 +177,25 @@ export const Pathfinder = ({
       <ActionWrapper>
         <PanelButton onClick={handleToggle} />
       </ActionWrapper>
-      {isOpen && (
-        <Container>
-          <Overlay onClick={() => setOpen(false)} />
-          <Content>
-            <Panel
-              urlHeaders={endpointsHeaders}
-              config={config}
-              urlEnvInitialValues={initialUrlValues}
-              onLoadSpec={handleLoadSpec}
-              defaultEnvId={module.getGlobalEnv()}
-              defaultHeaders={globalHeaders}
-              onClose={handleToggle}
-              onChangeDefaultEnv={handleChangeDefaultEnv}
-              onChangeUrlEnv={handleChangeUrlEnv}
-              onChangeEndpointHeaders={onChangeEndpointHeadersHandler}
-              onChangeDefaultHeaders={onChangeDefaultHeadersHandler}
-              onResetOptions={handleOnResetOptions}
-            />
-          </Content>
-        </Container>
-      )}
+      <Container hidden={!isOpen}>
+        <Overlay onClick={() => setOpen(false)} />
+        <Content>
+          <Panel
+            urlHeaders={endpointsHeaders}
+            config={config}
+            urlEnvInitialValues={initialUrlValues}
+            onLoadSpec={handleLoadSpec}
+            defaultEnvId={module.getGlobalEnv()}
+            defaultHeaders={globalHeaders}
+            onClose={handleToggle}
+            onChangeDefaultEnv={handleChangeDefaultEnv}
+            onChangeUrlEnv={handleChangeUrlEnv}
+            onChangeEndpointHeaders={onChangeEndpointHeadersHandler}
+            onChangeDefaultHeaders={onChangeDefaultHeadersHandler}
+            onResetOptions={handleOnResetOptions}
+          />
+        </Content>
+      </Container>
     </ThemeProvider>
   );
 };

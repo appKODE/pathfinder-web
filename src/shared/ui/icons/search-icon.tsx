@@ -6,11 +6,7 @@ type Props = {
 
 export const SearchIcon = ({ color }: Props) => {
   return (
-    <svg
-      width="24px"
-      height="24px"
-      viewBox="0 0 512.000000 512.000000"
-    >
+    <svg width="24px" height="24px" viewBox="0 0 512.000000 512.000000">
       <g
         transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
         fill={color ?? '#000000'}

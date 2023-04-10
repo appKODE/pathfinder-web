@@ -13,7 +13,6 @@ import {
   UrlEnvSetter,
   UrlSpec,
 } from './types';
-
 import {
   createUrl,
   parseUrl,

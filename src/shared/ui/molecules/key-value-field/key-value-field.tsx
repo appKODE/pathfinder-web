@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
+
 import { useClickOutside } from '../../../hooks';
 import { Button } from '../../atoms';
 import { Box } from '../../core';

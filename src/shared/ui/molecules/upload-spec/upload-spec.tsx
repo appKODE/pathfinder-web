@@ -32,7 +32,7 @@ const Wrapper = styled.label`
   &::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: 3px;
     left: 0;
     display: inline-block;
     width: 40px;

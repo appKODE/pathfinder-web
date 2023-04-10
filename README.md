@@ -4,16 +4,16 @@
 
 &nbsp;
 
-# @kode-frontend/pathfinder-web-react
+# @kode-frontend/pathfinder-web
 
-  <a href="https://www.npmjs.com/package/@kode-frontend/pathfinder-web-react">
-    <img alt="npm version" src="https://img.shields.io/npm/v/@kode-frontend/pathfinder-web-react.svg">
+  <a href="https://www.npmjs.com/package/@kode-frontend/pathfinder-web">
+    <img alt="npm version" src="https://img.shields.io/npm/v/@kode-frontend/pathfinder-web.svg">
   </a>
-  <a href="https://www.npmjs.com/package/@kode-frontend/pathfinder-web-react">
-    <img alt="npm downloads" src="https://img.shields.io/npm/dt/@kode-frontend/pathfinder-web-react.svg">
+  <a href="https://www.npmjs.com/package/@kode-frontend/pathfinder-web">
+    <img alt="npm downloads" src="https://img.shields.io/npm/dt/@kode-frontend/pathfinder-web.svg">
   </a>
-  <a href="https://github.com/appKODE/pathfinder-web-react/blob/main/LICENSE">
-    <img alt="npm license" src="https://img.shields.io/npm/l/@kode-frontend/pathfinder-web-react.svg">
+  <a href="https://github.com/appKODE/pathfinder-web/blob/main/LICENSE">
+    <img alt="npm license" src="https://img.shields.io/npm/l/@kode-frontend/pathfinder-web.svg">
   </a>
   <a href="https://standardjs.com">
     <img alt="standard js" src="https://img.shields.io/badge/code_style-standard-brightgreen.svg">
@@ -42,26 +42,13 @@ Pathfinder is a tool that allows to substitute the base URL for requests, helpin
 ## Installation
 
 ```bash
-npm i @kode-frontend/pathfinder-web-react
+npm i @kode-frontend/pathfinder-web
 
 # or using yarn
-yarn add @kode-frontend/pathfinder-web-react
+yarn add @kode-frontend/pathfinder-web
 ```
 
 Pathfinder is intended to be paired with a storage adapter and an OpenAPI resolver, which can be fully customized or installed as npm packages.
-
-We recommend using special libraries for integrating Pathfinder into your application. They are easy to integrate into an existing project and do not require any further development.
-
-Save as dependencies\* :
-
-```bash
-npm i @kode-frontend/pathfinder-web-local-storage @kode-frontend/pathfinder-web-open-api
-
-# or using yarn
-yarn add @kode-frontend/pathfinder-web-local-storage @kode-frontend/pathfinder-web-open-api
-```
-
-_\*You can read more about [pathfinder-web-local-storage](https://www.npmjs.com/package/@kode-frontend/pathfinder-web-local-storage) and [pathfinder-web-open-api](https://www.npmjs.com/package/@kode-frontend/pathfinder-web-open-api) on their pages._
 
 ## Introduction
 
@@ -80,14 +67,14 @@ Pathfinder works with the [OpenAPI 3.0 Specification](https://swagger.io/specifi
 
 ## Quickstart
 
-Create a new provider component with Pathfinder. Import `storage` and `openApiResolver` from the corresponding packages or create custom ones.
+Create a new provider component with Pathfinder. Import `storage` and `openApiResolver` from this packages or create custom ones.
 
 > **Storage** is an object that implements Pathfinder data storage\
 > **Resolver** takes OpenAPI data and converts it to the PathFinder format
 
 ```jsx
 import { ReactNode } from 'react';
-import { Pathfinder, openApiResolver, storage } from '@kode-frontend/pathfinder-web-react';
+import { Pathfinder, openApiResolver, storage } from '@kode-frontend/pathfinder-web';
 
 type Props = {
   children: ReactNode,
@@ -110,7 +97,7 @@ Create `PathfinderProvider`, for example
 
 ```jsx
 import * as React from 'react';
-import { Pathfinder, openApiResolver, storage } from '@kode-frontend/pathfinder-web-react';
+import { Pathfinder, openApiResolver, storage } from '@kode-frontend/pathfinder-web';
 
 
 type Props = {
@@ -170,7 +157,7 @@ Use it for quick component creation without mistakes.
 Clone repository and install dependencies:
 
 ```bash
-git clone https://github.com/appKODE/pathfinder-web-open-api.git
+git clone https://github.com/appKODE/pathfinder-web
 
 npm i
 
@@ -216,7 +203,7 @@ Now, anytime you make changes to your library in `/src` or to the example app's 
 
 ## License
 
-[MIT ©](https://github.com/appKODE/pathfinder-web-react/LICENCE)
+[MIT ©](https://github.com/appKODE/pathfinder-web/LICENCE)
 
 There is plop.js tool to create ui-component using a template. You need to set  up to create components quickly. After an extension installing you should follow next 2 steps: 
 1. Create new folder for ui-component;

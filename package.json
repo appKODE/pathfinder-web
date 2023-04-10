@@ -2,13 +2,13 @@
   "version": "0.4.2",
   "license": "MIT",
   "author": "KODE frontend team",
-  "homepage": "https://github.com/appKODE/pathfinder-web-react",
+  "homepage": "https://github.com/appKODE/pathfinder-web",
   "repository": {
-    "url": "git@https://github.com/appKODE/pathfinder-web-react",
+    "url": "git@https://github.com/appKODE/pathfinder-web",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/appKODE/pathfinder-web-react/issues"
+    "url": "https://github.com/appKODE/pathfinder-web/issues"
   },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -48,7 +48,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@kode-frontend/pathfinder-web-react",
+  "name": "@kode-frontend/pathfinder-web",
   "module": "dist/mytslib.esm.js",
   "size-limit": [
     {
@@ -115,7 +115,7 @@
       "@release-it/conventional-changelog": {
         "preset": {
           "name": "conventionalcommits",
-          "issueUrlFormat": "https://github.com/appKODE/pathfinder-web-react/issues/{{id}}"
+          "issueUrlFormat": "https://github.com/appKODE/pathfinder-web/issues/{{id}}"
         },
         "infile": "CHANGELOG.md"
       }

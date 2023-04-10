@@ -167,7 +167,7 @@ exports[`Storyshots UI/molecules/RadioGroup Radio Group Story 1`] = `
 
 exports[`Storyshots UI/molecules/UploadSpec Upload Spec Story 1`] = `
 <label
-  className="sc-llJcti jQJBdA"
+  className="sc-llJcti cjTRrP"
   htmlFor="upload-spec"
 >
   <span
@@ -208,7 +208,7 @@ exports[`Storyshots UI/molecules/UploadSpec Upload Spec Story 1`] = `
 
 exports[`Storyshots UI/organisms/EndpointsList Endpoints List Story 1`] = `
 <div
-  className="sc-gKXOVf dKcEah"
+  className="sc-gKXOVf hjGPlB"
 >
   <table
     className="sc-gicCDI iELRck"
@@ -364,7 +364,7 @@ exports[`Storyshots UI/organisms/EndpointsList Endpoints List Story 1`] = `
 
 exports[`Storyshots UI/organisms/Panel Basic 1`] = `
 <div
-  className="sc-bZkfAO kFnxAn"
+  className="sc-bZkfAO edCQVW"
 >
   <div
     className="sc-hAZoDl gfzPfq"
@@ -396,7 +396,7 @@ exports[`Storyshots UI/organisms/Panel Basic 1`] = `
     </div>
   </div>
   <label
-    className="sc-llJcti jQJBdA"
+    className="sc-llJcti cjTRrP"
     htmlFor="upload-spec"
   >
     <span
@@ -496,7 +496,7 @@ exports[`Storyshots UI/organisms/Panel Basic 1`] = `
         </td>
         <td>
           <div
-            className="sc-dIouRR sc-jIZahH dLbDzL gjWyVB"
+            className="sc-dIouRR sc-jIZahH dLbDzL dQuHqX"
           >
             <div
               className="sc-dmRaPn cluTth"
@@ -603,7 +603,7 @@ exports[`Storyshots UI/organisms/Panel Basic 1`] = `
     </tbody>
   </table>
   <div
-    className="sc-gKXOVf dKcEah"
+    className="sc-gKXOVf hjGPlB"
   >
     <table
       className="sc-gicCDI iELRck"

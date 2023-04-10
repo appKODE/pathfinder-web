@@ -1,6 +1,6 @@
+import { useEffect } from 'react';
 import intercept from 'fetch-intercept';
 
-import { useEffect } from 'react';
 import { createTemplatesBySpec } from '../../lib';
 import { Header, Pathfinder } from '../../types';
 
@@ -12,6 +12,7 @@ const mergeGlobalAndEndpointHeaders = ({
   endpointHeaders,
   globalHeaders,
 }: TMergeGlobalEndEndpointHeadersArg): Record<string, string> => {
+  
   if (globalHeaders.length === 0) {
     return endpointHeaders.reduce((acc, current) => {
       return { ...acc, [current.key]: current.value };

@@ -1,5 +1,6 @@
 import { ComponentProps } from 'react';
-import { MethodSelect } from '.';
+
+import { MethodSelect } from './method-select';
 
 type Props = Partial<ComponentProps<typeof MethodSelect>>;
 

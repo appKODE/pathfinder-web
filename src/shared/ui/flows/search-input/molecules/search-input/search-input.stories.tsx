@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react';
-import { SearchInput } from '.';
+import { SearchInput } from './search-input';
 
 type Props = ComponentProps<typeof SearchInput>;
 type PartialProps = Partial<Props>;

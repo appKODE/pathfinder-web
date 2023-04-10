@@ -1,5 +1,6 @@
-import { Meta } from '@storybook/react';
 import { ComponentProps } from 'react';
+import { Meta } from '@storybook/react';
+
 import { Panel } from './panel';
 
 type Props = Partial<ComponentProps<typeof Panel>>;

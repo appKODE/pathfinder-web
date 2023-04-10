@@ -1,17 +1,17 @@
 import React, { useMemo, useState, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 
+import {
+  THeadersChangeHandler,
+  TUrlHeaders,
+  TUrlItem,
+} from '../endpoints-list/types';
 import { Button } from '../../atoms';
 import { Header, UploadSpec, RadioGroup } from '../../molecules';
 import { EndpointsList } from '../endpoints-list';
 import { TRadioOptions } from '../../atoms/radio-input/types';
 import { TConfig } from './types';
 import { SearchInput } from '../../flows';
-import {
-  THeadersChangeHandler,
-  TUrlHeaders,
-  TUrlItem,
-} from '../endpoints-list/types';
 import { Box, Row } from '../../core';
 import { KeyValueField } from '../../molecules/key-value-field';
 import { UrlMethod } from '../../../../types';

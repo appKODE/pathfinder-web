@@ -1,7 +1,7 @@
-import { ComponentProps } from 'react';
+import React, { ComponentProps } from 'react';
 import { Meta, Story } from '@storybook/react';
+
 import { EndpointsList } from './endpoints-list';
-import React from 'react';
 
 type Props = ComponentProps<typeof EndpointsList>;
 type PartialProps = Partial<Props>;

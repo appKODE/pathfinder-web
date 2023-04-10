@@ -5,20 +5,27 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-
 import styled, { ThemeProvider } from 'styled-components';
 
 import { theme } from '../shared/theme';
 import { PanelButton } from '../shared/ui/atoms';
 import { Panel } from '../shared/ui/organisms';
 import { TPanelEnv, TPanelUrl } from '../shared/ui/organisms/panel/types';
-
 import { addConsoleActivation } from '../features/hidden-activation';
 import { useRequestInterception } from '../processes';
 import { parseHeaders } from '../shared/lib';
 import { stringifyHeaders } from '../shared/lib/stringify-headers';
 import { DataResolver, DataStorage, EnvSpec, Spec, UrlSpec } from '../types';
 import { createPathFinder } from '../lib';
+
+type PathfinderProviderProps = {
+  children: JSX.Element;
+  storage: DataStorage;
+  resolver: DataResolver;
+  dataKey: string;
+  active?: boolean;
+  basePath: string;
+};
 
 const ActionWrapper = styled.div`
   position: fixed;
@@ -62,21 +69,13 @@ const Overlay = styled.div`
   backdrop-filter: blur(3px);
 `;
 
-type PathfinderProviderProps = {
-  children: JSX.Element;
-  storage: DataStorage;
-  resolver: DataResolver;
-  dataKey: string;
-  active?: boolean;
-  basePath: string;
-};
-
 const toPanelUrl = (url: UrlSpec): TPanelUrl => ({
   id: url.id,
   method: url.method,
   template: url.template,
   name: url.name,
 });
+
 const toPanelEnv = (env: EnvSpec): TPanelEnv => ({
   id: env.id,
   name: env.name,

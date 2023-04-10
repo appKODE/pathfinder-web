@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { UrlMethod } from '../../../../../../types';
 
+import { UrlMethod } from '../../../../../../types';
 import { ThinCloseIcon } from '../../../../icons';
 import { MethodSelect } from '../../atoms';
 

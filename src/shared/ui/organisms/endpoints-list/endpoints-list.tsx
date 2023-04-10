@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-import { Method, ScrollWrapper } from '../../atoms';
-import { RadioGroup } from '../../molecules';
-import { TRadioOptions } from '../../atoms/radio-input/types';
 import {
   TBasePathChangeHandler,
   THeadersChangeHandler,
   TUrlHeaders,
   TUrlItem,
 } from './types';
+import { Method, ScrollWrapper } from '../../atoms';
+import { RadioGroup } from '../../molecules';
+import { TRadioOptions } from '../../atoms/radio-input/types';
 import { KeyValueField } from '../../molecules/key-value-field';
 
 const Table = styled.table`

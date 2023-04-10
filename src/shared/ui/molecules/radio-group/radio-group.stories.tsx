@@ -1,6 +1,8 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
+
 import { Meta, Story } from '@storybook/react';
+
 import { RadioGroup } from './radio-group';
 
 export default {
@@ -21,4 +23,4 @@ export default {
 
 export const RadioGroupStory: Story<
   React.ComponentProps<typeof RadioGroup>
-> = args => <RadioGroup {...args}/>;
+> = args => <RadioGroup {...args} />;

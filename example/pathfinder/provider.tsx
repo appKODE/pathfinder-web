@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Pathfinder, openApiResolver, storage } from '@kode-frontend/pathfinder-web-react';
+import { Pathfinder, openApiResolver, storage } from '@kode-frontend/pathfinder-web';
 
 type Props = {
   children: React.ReactNode;

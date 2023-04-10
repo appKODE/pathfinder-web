@@ -4,11 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "yarn link @kode-frontend/pathfinder-web-react && parcel index.html",
+    "start": "yarn link @kode-frontend/pathfinder-web && parcel index.html",
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "@kode-frontend/pathfinder-web-react": "^0.2.0",
+    "@kode-frontend/pathfinder-web": "^0.2.0",
     "react-app-polyfill": "^1.0.0"
   },
   "alias": {

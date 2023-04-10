@@ -19,9 +19,10 @@ import { UrlMethod } from '../../../../types';
 const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.main.light.normal};
   border-radius: 4px;
-  overflow: hidden;
   padding: 6px 12px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 const DefaultControls = styled.table`
@@ -43,6 +44,7 @@ const Text = styled.span`
 
 const RightControls = styled(Row)`
   justify-content: end;
+  align-items: center;
 `;
 
 type Props = {

@@ -7,6 +7,7 @@ const Wrapper = styled.div<{ $height?: string }>`
   align-items: stretch;
   justify-content: start;
   width: 100%;
+  height: 100%;
   max-height: ${({ $height }) => ($height ? $height : '75vh')};
   padding: 8px;
   overflow: scroll;

@@ -13,6 +13,24 @@ export const urlSpec: UrlSpec = {
   name: 'user content',
   tags: ['user'],
   template: endpointTemplate,
+  responses: [
+    {
+      code: '200',
+      examples: [],
+    },
+    {
+      code: '403',
+      examples: [],
+    },
+    {
+      code: '422',
+      examples: [],
+    },
+    {
+      code: '500',
+      examples: [],
+    },
+  ],
 };
 
 export const url = 'https://domain.dev/user/v2/content/1/?group=admin#fragment';
@@ -51,7 +69,10 @@ const spec: Spec = {
     },
   ],
   urls: [urlSpec],
+  id: 'spec1',
 };
+
+export const specs = [spec];
 
 export const dataResolver: DataResolver = {
   parse: () => spec,
@@ -59,15 +80,19 @@ export const dataResolver: DataResolver = {
 
 export const dataStorage: Storage = {
   getEndpointEnv: () => '',
-  getGlobalEnv: () => '',
-  getSpec: () => spec,
+  getGlobalEnv: () => {
+    return {};
+  },
+  getSpecs: () => [spec],
   resetEndpointsEnv: () => null,
   resetGlobalEnv: () => null,
   setEndpointEnv: () => null,
   setGlobalEnv: () => null,
-  setSpec: () => null,
+  setSpecs: () => null,
   getEndpointHeaders: () => [],
-  getGlobalHeaders: () => [],
+  getGlobalHeaders: () => {
+    return {};
+  },
   setEndpointHeaders: () => null,
   setGlobalHeaders: () => null,
   resetEndpointsHeaders: () => null,

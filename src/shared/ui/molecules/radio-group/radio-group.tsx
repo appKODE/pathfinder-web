@@ -6,7 +6,8 @@ import { TDigitalColors, TRadioOptions } from '../../atoms/radio-input/types';
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 26px;
 `;
 

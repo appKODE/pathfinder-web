@@ -10,21 +10,35 @@ import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../shared/theme';
 import { PanelButton } from '../shared/ui/atoms';
 import { Panel } from '../shared/ui/organisms';
-import { TPanelEnv, TPanelUrl } from '../shared/ui/organisms/panel/types';
+import {
+  TConfigs,
+  TPanelEnv,
+  TPanelUrl,
+} from '../shared/ui/organisms/panel/types';
 import { addConsoleActivation } from '../features/hidden-activation';
 import { useRequestInterception } from '../processes';
 import { parseHeaders } from '../shared/lib';
-import { stringifyHeaders } from '../shared/lib/stringify-headers';
-import { DataResolver, DataStorage, EnvSpec, Spec, UrlSpec } from '../types';
+import {
+  DataResolver,
+  DataStorage,
+  EnvSpec,
+  Header,
+  Schema,
+  Spec,
+  StrRecord,
+  UrlSpec,
+} from '../types';
 import { createPathFinder } from '../lib';
+import { TUrlHeaders } from '../shared/ui/organisms/endpoints-list/types';
+import { getEndpointsHeaders } from '../shared/lib/helpers';
 
 type PathfinderProviderProps = {
   children: JSX.Element;
   storage: DataStorage;
   resolver: DataResolver;
+  defaultSpecs?: Schema[];
   dataKey: string;
   active?: boolean;
-  basePath: string;
 };
 
 const ActionWrapper = styled.div`
@@ -74,6 +88,7 @@ const toPanelUrl = (url: UrlSpec): TPanelUrl => ({
   method: url.method,
   template: url.template,
   name: url.name,
+  responses: url.responses,
 });
 
 const toPanelEnv = (env: EnvSpec): TPanelEnv => ({
@@ -86,28 +101,22 @@ export const Pathfinder = ({
   resolver,
   storage,
   dataKey,
+  defaultSpecs,
   active,
-  basePath,
 }: PathfinderProviderProps) => {
   const module = useMemo(() => {
-    return createPathFinder({ data: storage, dataKey, resolver, basePath });
+    return createPathFinder({ data: storage, dataKey, resolver });
   }, [resolver, storage]);
-  const [spec, setSpec] = useState<Spec | null>(module.getSpec());
-  const [globalHeaders, setGlobalHeaders] = useState<string>(
-    stringifyHeaders(module.getGlobalHeaders()),
+
+  const [spec, setSpec] = useState<Spec[] | null>(module.getSpecs());
+  const [globalHeaders, setGlobalHeaders] = useState<StrRecord<Header[]>>(
+    module.getGlobalHeaders(),
   );
 
-  const endpointsHeadersDefault =
-    module.getSpec()?.urls.reduce(
-      (acc, endpoint) => ({
-        ...acc,
-        [endpoint.id]: stringifyHeaders(module.getEndpointHeaders(endpoint.id)),
-      }),
-      {},
-    ) || {};
+  const endpointsHeadersDefault: StrRecord<TUrlHeaders | {}> = getEndpointsHeaders(module.getEndpointHeaders, spec) || {};
 
   const [endpointsHeaders, setEndpointsHeaders] = useState<
-    Record<string, string>
+    StrRecord<TUrlHeaders | {}>
   >(endpointsHeadersDefault);
 
   const [isOpen, setOpen] = useState(false);
@@ -117,57 +126,84 @@ export const Pathfinder = ({
     addConsoleActivation(setActive);
   }, [setActive]);
 
-  useRequestInterception(module, isActive || false, basePath);
+  useRequestInterception(module, isActive || false);
 
   const handleToggle = useCallback(() => {
     setOpen(prevState => !prevState);
   }, []);
 
-  const handleChangeDefaultEnv = (envId: string | null) => {
-    module.setGlobalEnv(envId);
+  const handleChangeDefaultEnv = (envId: string | null, specId: string) => {
+    module.setGlobalEnv(envId, specId);
   };
 
-  const handleChangeUrlEnv = (urlId: string, envId?: string) => {
-    module.setUrlEnv(urlId, envId);
+  const handleChangeUrlEnv = (
+    urlId: string,
+    specId: string,
+    envId?: string,
+  ) => {
+    module.setUrlEnv(urlId, specId, envId);
   };
 
-  const handleLoadSpec = (data: unknown) => {
-    module.setSpec(data);
-    setSpec(module.getSpec());
-  };
-
-  const handleOnResetOptions = () => {
-    module.reset();
-    setSpec(module.getSpec());
-  };
-
-  const config = {
-    urlList: spec?.urls.map(toPanelUrl) || [],
-    envList: spec?.envs.map(toPanelEnv) || [],
-  };
+  const loadSpec = (data: unknown[]) => {
+    module.setSpecs(data);
+    const specs = module.getSpecs()
+    setSpec(specs);
+    const getLocalEndpointHeader = module.getEndpointHeaders
+    const endpoints = getEndpointsHeaders(getLocalEndpointHeader, specs)
+    setEndpointsHeaders(endpoints)
+  }
+  useEffect(() => {
+    if (defaultSpecs) {
+      loadSpec(defaultSpecs)
+    }
+  }, [])
 
   if (!isActive) {
     return <Fragment>{children}</Fragment>;
   }
 
-  const initialUrlValues: Record<string, string> = {};
-
-  config.urlList.forEach(url => {
-    const envId = module.getUrlEnv(url.id);
-    initialUrlValues[url.id] = envId || '';
-  });
-
-  const onChangeDefaultHeadersHandler = (value: string) => {
-    const headers = parseHeaders(value);
-    setGlobalHeaders(stringifyHeaders(headers));
-    module.setGlobalHeaders(headers);
+  const handleLoadSpec = (data: unknown[]) => {
+    loadSpec(data)
   };
 
-  const onChangeEndpointHeadersHandler = (value: string, id: string) => {
+  const handleOnResetOptions = () => {
+    module.reset();
+    setSpec(module.getSpecs());
+  };
+
+  const configs: TConfigs[] = [];
+  const initialUrlValues: StrRecord<string> = {};
+
+  spec?.forEach(item => {
+    configs.push({
+      specId: item.id,
+      config: {
+        urlList: item?.urls.map(url => {
+          const newUrl = toPanelUrl(url);
+          const envId = module.getUrlEnv(newUrl.id, item.id);
+          initialUrlValues[newUrl.id] = envId || '';
+          return newUrl
+        }) || [],
+        envList: item?.envs.map(toPanelEnv) || [],
+      },
+    });
+  });
+
+  const onChangeDefaultHeadersHandler = (value: string, specId: string) => {
+    const headers = parseHeaders(value);
+    module.setGlobalHeaders(headers, specId);
+    setGlobalHeaders(module.getGlobalHeaders());
+  };
+
+  const onChangeEndpointHeadersHandler = (
+    value: string,
+    id: string,
+    specId: string,
+  ) => {
     const headers = parseHeaders(value);
 
-    setEndpointsHeaders(prev => ({ ...prev, [id]: value }));
-    module.setEndpointHeaders(id, headers);
+    module.setEndpointHeaders(id, headers, specId);
+    setEndpointsHeaders(prev => ({ ...prev, [specId]: { [id]: value } }));
   };
 
   return (
@@ -181,7 +217,7 @@ export const Pathfinder = ({
         <Content>
           <Panel
             urlHeaders={endpointsHeaders}
-            config={config}
+            configs={configs}
             urlEnvInitialValues={initialUrlValues}
             onLoadSpec={handleLoadSpec}
             defaultEnvId={module.getGlobalEnv()}

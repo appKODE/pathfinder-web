@@ -5,6 +5,7 @@ import {
   parseUrl,
   makeBuildUrl,
 } from '../features/web-core';
+import { specs } from './mocks';
 
 export const specSimple: UrlSpec = {
   id: 'get-user-content',
@@ -12,6 +13,12 @@ export const specSimple: UrlSpec = {
   name: 'user content',
   tags: ['user'],
   template: '/user/v2/content',
+  responses: [
+    {
+      code: '403',
+      examples: [],
+    },
+  ],
 };
 
 export const specWithPathParam: UrlSpec = {
@@ -20,6 +27,12 @@ export const specWithPathParam: UrlSpec = {
   name: 'user content',
   tags: ['user'],
   template: '/user/v2/customers/{customerId}',
+  responses: [
+    {
+      code: '403',
+      examples: [],
+    },
+  ],
 };
 
 export const specWithWithPathParamSearch: UrlSpec = {
@@ -28,6 +41,12 @@ export const specWithWithPathParamSearch: UrlSpec = {
   name: 'user content',
   tags: ['user'],
   template: '/user/v2/customers/search/{q}',
+  responses: [
+    {
+      code: '403',
+      examples: [],
+    },
+  ],
 };
 
 const templateSimple = '/user/v2/content';
@@ -46,7 +65,7 @@ const buildUrl = makeBuildUrl({
   urlEnvGetter: getUrlEnvMock,
   createUrl,
   parseUrl,
-  basePath: 'https://domain.dev',
+  specs,
 });
 
 const buildUrlWithApi = makeBuildUrl({
@@ -54,7 +73,7 @@ const buildUrlWithApi = makeBuildUrl({
   urlEnvGetter: getUrlEnvMock,
   createUrl,
   parseUrl,
-  basePath: 'https://domain.dev/api',
+  specs,
 });
 
 describe('Test for buildUrl', () => {
@@ -66,6 +85,7 @@ describe('Test for buildUrl', () => {
       method: 'GET',
       url,
       envSpecs: [],
+      specs,
     });
 
     expect(result).toEqual(url);
@@ -85,9 +105,12 @@ describe('Test for buildUrl', () => {
           baseUrl: 'https://some-dev-base-path.dev/api',
         },
       ],
+      specs,
     });
 
-    expect(result).toEqual(url);
+    expect(result).toEqual(
+      'https://some-dev-base-path.dev/api/user/v2/customers/some-path-param/?page=1&pageSize=3',
+    );
   });
 
   it('Should change only base path', () => {
@@ -104,6 +127,7 @@ describe('Test for buildUrl', () => {
           baseUrl: 'https://some-dev-base-path.dev',
         },
       ],
+      specs,
     });
 
     expect(result).toEqual(
@@ -125,6 +149,7 @@ describe('Test for buildUrl', () => {
           queryParams: { 'some-new-param': 'test' },
         },
       ],
+      specs,
     });
 
     expect(result).toEqual(
@@ -146,6 +171,7 @@ describe('Test for buildUrl', () => {
           baseUrl: 'https://some-dev-base-path.dev',
         },
       ],
+      specs,
     });
 
     expect(result).toEqual(

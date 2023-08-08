@@ -6,8 +6,9 @@ import {
   GlobalHeadersSetter,
   Header,
   Spec,
-  SpecGetter,
+  SpecsGetter,
   Storage,
+  StrRecord,
   UrlEnvGetter,
   UrlEnvSetter,
   UrlHeadersGetter,
@@ -21,16 +22,14 @@ export const ENDPOINTS_HEADERS_KEY = 'edpoints-headers';
 export const GLOBAL_HEADERS_KEY = 'global-headers';
 
 export const getStorage: GetStorageFn = adapter => {
-  const getEndpointsOptions = <T>(
-    key: string,
-  ): Record<string, T> | undefined => {
+  const getEndpointsOptions = <T>(key: string): StrRecord<T> | undefined => {
     let result;
 
     try {
       const optionsString = adapter.getItem(key);
 
       if (optionsString) {
-        const parsedOptions = JSON.parse(optionsString) as Record<string, T>;
+        const parsedOptions = JSON.parse(optionsString) as StrRecord<T>;
 
         if (typeof parsedOptions === 'object') {
           result = parsedOptions;
@@ -44,21 +43,39 @@ export const getStorage: GetStorageFn = adapter => {
   };
 
   /* Env */
+  // Endpoints {"specId" : {"endpointName" : "enviromentId", "endpointName2" : "enviromentId"}, "specId2":...}
+  // Global: { "specId" : envIdNumber,  }
 
-  const getEndpointEnv: UrlEnvGetter = urlId => {
-    const options = getEndpointsOptions<string>(ENDPOINTS_KEY);
-
-    if (options && options[urlId]) {
-      return options[urlId];
+  const getEndpointEnv: UrlEnvGetter = (urlId, specId) => {
+    const options = getEndpointsEnv();
+    const globalEnv = getGlobalEnv()[specId];
+    if (options && options[specId] && options[specId][urlId]) {
+      return options[specId][urlId];
     }
-
-    return null;
+    return globalEnv || null;
   };
 
-  const setEndpointEnv: UrlEnvSetter = (urlId, envId) => {
-    const options = getEndpointsOptions<string>(ENDPOINTS_KEY);
-    const res = { ...options, [urlId]: envId };
+  const getEndpointsEnv = () => {
+    const rawData = adapter.getItem(ENDPOINTS_KEY);
 
+    if (rawData) {
+      try {
+        return JSON.parse(rawData) as StrRecord<StrRecord<string>>;
+      } catch (e) {
+        return {};
+      }
+    }
+
+    return {};
+  };
+
+  const setEndpointEnv: UrlEnvSetter = (urlId, specId, envId) => {
+    const options = getEndpointsEnv();
+    const specEndpointEnv = options[specId];
+    const res = {
+      ...options,
+      [specId]: { ...specEndpointEnv, [urlId]: envId },
+    };
     adapter.setItem(ENDPOINTS_KEY, JSON.stringify(res));
   };
 
@@ -70,26 +87,45 @@ export const getStorage: GetStorageFn = adapter => {
     adapter.setItem(GLOBAL_ENV_KEY, '{}');
   };
 
-  const getGlobalEnv: GlobalEnvGetter = () => adapter.getItem(GLOBAL_ENV_KEY);
+  const getGlobalEnv: GlobalEnvGetter = () => {
+    const rawEnv = adapter.getItem(GLOBAL_ENV_KEY);
 
-  const setGlobalEnv: GlobalEnvSetter = envId => {
+    if (rawEnv) {
+      try {
+        return JSON.parse(rawEnv) as StrRecord<string>;
+      } catch (e) {
+        return {};
+      }
+    }
+
+    return {};
+  };
+
+  const setGlobalEnv: GlobalEnvSetter = (envId, specId) => {
     if (envId) {
-      adapter.setItem(GLOBAL_ENV_KEY, envId);
+      const envs = getGlobalEnv();
+      adapter.setItem(
+        GLOBAL_ENV_KEY,
+        JSON.stringify({ ...envs, [specId]: envId }),
+      );
     }
   };
 
   /* Specification */
 
-  const setSpec = (data: Spec) => {
-    adapter.setItem(SPEC_KEY, JSON.stringify(data));
+  const setSpecs = (data: Spec[]) => {
+    const newSpecsNames = new Set(data.map(spec => spec.id));
+    const oldSpecs =
+      getSpecs()?.filter(spec => !newSpecsNames.has(spec.id)) || [];
+    adapter.setItem(SPEC_KEY, JSON.stringify([...data, ...oldSpecs]));
   };
 
-  const getSpec: SpecGetter = () => {
+  const getSpecs: SpecsGetter = () => {
     const rawSpec = adapter.getItem(SPEC_KEY);
 
     if (rawSpec) {
       try {
-        return JSON.parse(rawSpec) as Spec;
+        return JSON.parse(rawSpec) as Spec[];
       } catch (e) {
         return null;
       }
@@ -98,9 +134,15 @@ export const getStorage: GetStorageFn = adapter => {
   };
 
   /* Headers */
+  // {specIdNumber : [{key: key1, value: value1}, ...]}
 
-  const setGlobalHeaders: GlobalHeadersSetter = data => {
-    adapter.setItem(GLOBAL_HEADERS_KEY, JSON.stringify(data));
+  const setGlobalHeaders: GlobalHeadersSetter = (data, specId) => {
+    const headers = getGlobalHeaders();
+
+    adapter.setItem(
+      GLOBAL_HEADERS_KEY,
+      JSON.stringify({ ...headers, [specId]: data }),
+    );
   };
 
   const getGlobalHeaders: GlobalHeadersGetter = () => {
@@ -108,34 +150,37 @@ export const getStorage: GetStorageFn = adapter => {
 
     if (rawData) {
       try {
-        return JSON.parse(rawData) as Header[];
+        return JSON.parse(rawData) as StrRecord<
+          { key: string; value: string }[]
+        >;
       } catch (e) {
-        return [];
+        return {};
       }
     }
-
-    return [];
+    return {};
   };
 
-  const setEndpointHeaders: UrlHeadersSetter = (urlId, headers) => {
+  const setEndpointHeaders: UrlHeadersSetter = (urlId, headers, specId) => {
     const options = getEndpointsOptions<Header[]>(ENDPOINTS_HEADERS_KEY);
-    const res = { ...options, [urlId]: headers };
-
+    const spec = options ? options[specId] : null;
+    const newSpec = spec ? { ...spec, [urlId]: headers } : { [urlId]: headers };
+    const res = { ...options, [specId]: newSpec };
     adapter.setItem(ENDPOINTS_HEADERS_KEY, JSON.stringify(res));
   };
 
-  const getEndpointHeaders: UrlHeadersGetter = urlId => {
-    const options = getEndpointsOptions<Header[]>(ENDPOINTS_HEADERS_KEY);
-
-    if (options && options[urlId]) {
-      return options[urlId];
+  const getEndpointHeaders: UrlHeadersGetter = (urlId, specId) => {
+    const options = getEndpointsOptions<StrRecord<Header[]>>(
+      ENDPOINTS_HEADERS_KEY,
+    );
+    if (options && options[specId] && options[specId][urlId]) {
+      return options[specId][urlId];
     }
 
     return [];
   };
 
   const resetGlobalHeaders: () => void = () => {
-    adapter.setItem(GLOBAL_HEADERS_KEY, '');
+    adapter.setItem(GLOBAL_HEADERS_KEY, '{}');
   };
 
   const resetEndpointsHeaders: () => void = () => {
@@ -143,8 +188,8 @@ export const getStorage: GetStorageFn = adapter => {
   };
 
   const storage: Storage = {
-    getSpec,
-    setSpec,
+    getSpecs,
+    setSpecs,
     getEndpointEnv,
     setEndpointEnv,
     resetEndpointsEnv,

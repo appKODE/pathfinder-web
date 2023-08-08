@@ -1,7 +1,9 @@
 import React, { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
-import { AddIcon } from '../../icons';
+type Props = {
+  onLoad: (data: any) => void;
+};
 
 const Text = styled.span`
   position: relative;
@@ -12,11 +14,6 @@ const Text = styled.span`
   font-size: 14px;
   text-transform: uppercase;
   white-space: nowrap;
-
-  svg {
-    transform: translateX(-4px);
-    transition: 0.4s ease;
-  }
 `;
 
 const Wrapper = styled.label`
@@ -28,39 +25,6 @@ const Wrapper = styled.label`
   transition: 0.3s ease;
   user-select: none;
   cursor: pointer;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 0;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border-radius: 40px;
-    background-color: ${({ theme }) => theme.colors.digital.blue.translucent};
-    transition: 0.4s ease;
-    z-index: 0;
-  }
-
-  &:focus-within,
-  &:hover {
-    &::before {
-      width: 100%;
-      background-color: ${({ theme }) => theme.colors.digital.blue.normal};
-      opacity: 0.7;
-    }
-
-    ${Text} {
-      svg {
-        transform: translateX(0);
-      }
-    }
-  }
-
-  &:active {
-    transform: scale(0.96);
-  }
 `;
 
 const HiddenInput = styled.input`
@@ -71,35 +35,42 @@ const HiddenInput = styled.input`
   clip: rect(0 0 0 0);
 `;
 
-type Props = {
-  onLoad: (data: any) => void;
-};
-
 export const UploadSpec = ({ onLoad }: Props) => {
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = async (event: ChangeEvent<HTMLInputElement>) => {
     const blob = event.target.files;
-    if (blob && blob[0]) {
-      const reader = new FileReader();
-      reader.onload = handleReaderLoad;
-      reader.readAsText(blob[0]);
+    if (blob) {
+      const files = Array.from(blob).map(file => {
+        const reader = new FileReader();
+        return new Promise<string | ArrayBuffer | null>(resolve => {
+          // Resolve the promise after reading file
+          reader.onload = () => resolve(reader.result);
+
+          // Read the file as a text
+          reader.readAsText(file);
+        });
+      });
+      const res = await Promise.all(files);
+      const jsons: object[] = res.map((file => JSON.parse(typeof file === 'string' ? file : '')))
+      onLoad(jsons);
     }
   };
-  const handleReaderLoad = (event: ProgressEvent<FileReader>) => {
-    if (event.target && typeof event.target.result === 'string') {
-      const json = JSON.parse(event.target.result);
-      onLoad(json);
-    }
-  };
+  // const handleReaderLoad = (event: ProgressEvent<FileReader>) => {
+  //   if (event.target && typeof event.target.result === 'string') {
+  //     const json = JSON.parse(event.target.result);
+
+  //     onLoad(json);
+  //   }
+  // };
 
   return (
     <Wrapper htmlFor="upload-spec">
       <Text>
-        Upload specification
-        <AddIcon size={14} />
+        +
       </Text>
       <HiddenInput
         id="upload-spec"
         type="file"
+        multiple
         accept="application/json"
         onChange={handleChange}
       />

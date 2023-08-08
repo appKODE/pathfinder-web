@@ -22,11 +22,30 @@ Object {
       "queryParams": Object {},
     },
   ],
+  "id": "title",
   "urls": Array [
     Object {
       "id": "post-auth-confirm",
       "method": "POST",
       "name": "verification",
+      "responses": Array [
+        Object {
+          "code": "200",
+          "examples": Array [],
+        },
+        Object {
+          "code": "403",
+          "examples": Array [],
+        },
+        Object {
+          "code": "422",
+          "examples": Array [],
+        },
+        Object {
+          "code": "500",
+          "examples": Array [],
+        },
+      ],
       "tags": Array [
         "auth",
       ],

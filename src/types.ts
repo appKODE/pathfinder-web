@@ -11,11 +11,17 @@ export type UrlMethod =
 
 export type UTLTemplate = string;
 
+export type Response = {
+  code: string;
+  examples: string[];
+};
+
 export type UrlSpec = {
   id: string;
   name: string;
   template: string;
   method: UrlMethod;
+  responses: Response[];
   tags: string[];
 };
 
@@ -31,9 +37,12 @@ export type UrlBuilderArg = {
   url: string;
   templatesBySpec: Map<UrlSpec, UTLTemplate>;
   envSpecs?: EnvSpec[];
+  specs: Spec[] | null;
 };
 
 export type UrlBuilder = (arg: UrlBuilderArg) => string;
+
+export type StrRecord<T> = Record<string, T>;
 
 export type DataUrl = {
   baseUrl?: string;
@@ -47,24 +56,36 @@ export type Header = {
   value: string;
 };
 
-export type GlobalEnvSetter = (envId: string | null) => void;
-export type GlobalEnvGetter = () => string | null;
+export type GlobalEnvSetter = (envId: string | null, specId: string) => void;
+export type GlobalEnvGetter = () => Record<string, string>;
 
-export type UrlEnvSetter = (urlId: string, envId?: string) => void;
-export type UrlEnvGetter = (urlId: string) => string | null;
+export type UrlEnvSetter = (
+  urlId: string,
+  specId: string,
+  envId?: string,
+) => void;
+export type UrlEnvGetter = (urlId: string, specId: string) => string | null;
 
 export type ResetHandler = () => void;
 
+export type SpecsSetter = (obj: Spec[]) => void;
+export type SpecsLibSetter = (obj: unknown[]) => void;
+export type SpecsGetter = () => Spec[] | null;
+
 export type SpecSetter = (obj: unknown) => void;
-export type SpecGetter = () => Spec | null;
+export type SpecGetter = (id: string) => Spec | null;
 
 export type UrlListGetter = () => UrlSpec[];
 export type EnvListGetter = () => EnvSpec[];
 
-export type UrlHeadersSetter = (urlId: string, headers: Header[]) => void;
-export type GlobalHeadersSetter = (headers: Header[]) => void;
-export type UrlHeadersGetter = (url: string) => Header[];
-export type GlobalHeadersGetter = () => Header[];
+export type UrlHeadersSetter = (
+  urlId: string,
+  headers: Header[],
+  specId: string,
+) => void;
+export type GlobalHeadersSetter = (headers: Header[], specId: string) => void;
+export type UrlHeadersGetter = (url: string, specId: string) => Header[];
+export type GlobalHeadersGetter = () => Record<string, Header[]>;
 
 export type FindSpecFn = (
   templatesBySpec: Map<UrlSpec, UTLTemplate>,
@@ -80,8 +101,9 @@ export type Pathfinder = {
   getGlobalEnv: GlobalEnvGetter;
   setUrlEnv: UrlEnvSetter;
   getUrlEnv: UrlEnvGetter;
-  getSpec: SpecGetter;
-  setSpec: SpecSetter;
+  getSpecById: SpecGetter;
+  getSpecs: SpecsGetter;
+  setSpecs: SpecsLibSetter;
   reset: ResetHandler;
   setGlobalHeaders: GlobalHeadersSetter;
   getGlobalHeaders: GlobalHeadersGetter;
@@ -105,18 +127,21 @@ export type PathfinderBuilderOptions = {
   resolver: DataResolver;
   data: DataStorage;
   dataKey: string;
-  basePath: string;
 };
 
 export type PathfinderBuilder = (
   options: PathfinderBuilderOptions,
 ) => Pathfinder;
 
-export type Spec = { urls: UrlSpec[]; envs: EnvSpec[] };
+export type Spec = {
+  id: string;
+  urls: UrlSpec[];
+  envs: EnvSpec[];
+};
 
 export type Storage = {
-  setSpec: (data: Spec) => void;
-  getSpec: SpecGetter;
+  setSpecs: SpecsSetter;
+  getSpecs: SpecsGetter;
   resetEndpointsEnv: () => void;
   resetGlobalEnv: () => void;
   getEndpointEnv: UrlEnvGetter;
@@ -190,6 +215,11 @@ export interface Paths {
   [url: string]: PathItem;
 }
 
+export interface Info {
+  version: string;
+  title: string;
+}
+
 export type OperationType =
   | 'get'
   | 'put'
@@ -210,10 +240,31 @@ export interface PathItem extends PathItemOperations {
   parameters?: Parameter[];
 }
 
+type OperationExample = {
+  [name: string]: any;
+};
+
+type OperationResponseContent = {
+  'application/json': {
+    schema: {
+      ref: string;
+    };
+    examples: OperationExample;
+  };
+};
+
+export type OperationResponse = {
+  [code: string]: {
+    description?: string;
+    content?: OperationResponseContent;
+  };
+};
+
 export interface Operation {
   operationId: string;
   summary: string;
   tags?: string[];
+  responses?: OperationResponse;
   description?: string;
   parameters?: Parameter[];
   requestBody?: RequestBody;
@@ -268,6 +319,7 @@ export interface Schema {
 export interface OpenApiSpec {
   servers: Server[];
   paths: Paths;
+  info: Info;
 }
 
-export type ParseResult = { urls: UrlSpec[]; envs: EnvSpec[] };
+export type ParseResult = Spec;

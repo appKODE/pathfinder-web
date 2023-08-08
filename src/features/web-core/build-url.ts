@@ -1,14 +1,16 @@
-import { FindSpecFn, UrlBuilder, UrlEnvGetter } from '../../types';
+import { FindSpecFn, Spec, UrlBuilder, UrlEnvGetter } from '../../types';
 import { CreateUrlFn } from './create-url';
 
 import { ParseUrlFn } from './parse-url';
+import { findSpecIdByOrigin } from './find-spec-id';
+import { findBaseApi } from './find-base-api';
 
 type UrlBuilderFabric = (arg: {
   specGetter: FindSpecFn;
   urlEnvGetter: UrlEnvGetter;
   createUrl: CreateUrlFn;
   parseUrl: ParseUrlFn;
-  basePath: string;
+  specs: Spec[] | null;
 }) => UrlBuilder;
 
 /**
@@ -18,21 +20,31 @@ type UrlBuilderFabric = (arg: {
  *
  */
 export const makeBuildUrl: UrlBuilderFabric =
-  ({ specGetter, urlEnvGetter, createUrl, parseUrl, basePath }) =>
+  ({ specGetter, urlEnvGetter, createUrl, parseUrl, specs }) =>
   ({ templatesBySpec, method, url, envSpecs }) => {
-    const urlSpec = specGetter(templatesBySpec, method, url, basePath);
-    const parsedUrl = parseUrl(url);
+    if (!specs) {
+      return url;
+    }
+    const basePath = findBaseApi(specs, new URL(url).origin);
 
-    const posiblePrefix = new URL(basePath).pathname;
-    const prefix = posiblePrefix === '/' ? '' : posiblePrefix; // url.pathname если адресс вида https://dev.ru/ выдает '/'
+    const urlSpec = specGetter(templatesBySpec, method, url, basePath);
+
+    const parsedUrl = parseUrl(url);
+    const possiblePrefix = new URL(basePath).pathname;
+    const prefix = possiblePrefix === '/' ? '' : possiblePrefix; // url.pathname если адресс вида https://dev.ru/ выдает '/'
     // А при https://dev.ru/api/, api/
 
     if (!urlSpec || !parsedUrl) {
       return url;
     }
-    const envId = urlEnvGetter(urlSpec.id);
+
+    const specId = findSpecIdByOrigin(specs, new URL(url).origin);
+    const envId = urlEnvGetter(urlSpec.id, specId);
 
     const env = envSpecs?.find(item => item.id === envId);
+    if (!env) {
+      return url;
+    }
     if (env?.baseUrl) {
       parsedUrl.baseUrl = env.baseUrl;
     }

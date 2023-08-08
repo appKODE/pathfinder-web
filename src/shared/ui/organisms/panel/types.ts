@@ -1,4 +1,4 @@
-import { TUrlItem } from '../endpoints-list/types';
+import { TUrlHeaders, TUrlItem } from '../endpoints-list/types';
 
 export type TPanelEnv = {
   id: string;
@@ -12,7 +12,12 @@ export type TConfig = {
   urlList: TPanelUrl[];
 };
 
-export type THeader = {
-  key: string;
-  value: string;
+export type TConfigs = {
+  specId: string;
+  config: TConfig;
+};
+
+export type THeaders = {
+  specId: string;
+  headers: TUrlHeaders | {};
 };

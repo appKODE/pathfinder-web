@@ -6,3 +6,5 @@ export { Pathfinder } from './app';
 export { openApiResolver } from './lib';
 
 export { storage } from './features/storage';
+
+export { Schema } from './types'

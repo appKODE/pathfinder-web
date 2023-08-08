@@ -116,7 +116,8 @@ export function isServers(obj: any): obj is Server[] {
 }
 
 export function isOpenApiSpec(obj: any): obj is OpenApiSpec {
+  const hasInfo = obj.hasOwnProperty('info');
   const hasServers = obj.hasOwnProperty('servers') && isServers(obj.servers);
   const hasPaths = obj.hasOwnProperty('paths') && isPaths(obj.paths);
-  return hasServers && hasPaths;
+  return hasServers && hasPaths && hasInfo;
 }

@@ -22,12 +22,20 @@ const args: PartialProps = {
       method: 'POST',
       name: 'Endpoint name',
       template: '/user',
+      responses: {
+        code: '200',
+        examples: [],
+      }
     },
     {
       id: '2',
       method: 'POST',
       name: 'Endpoint name',
       template: '/user',
+      responses: {
+        code: '200',
+        examples: [],
+      },
     },
   ],
 };

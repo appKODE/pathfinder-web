@@ -9,12 +9,13 @@ import { FindSpecFn, UrlSpec } from '../../types';
  */
 export const findSpec: FindSpecFn = (templates, method, url, basePath) => {
   let result: UrlSpec | null = null;
+  const pathname = url.replace(basePath, '');
+
 
   templates.forEach((value, key) => {
-
-    const pathname = url.replace(basePath, ''); // Убираем из url basePath чтобы получить чистый адресс, 
+    // Убираем из url basePath чтобы получить чистый адресс,
     // необходимо это для обработки кейсов, когда server в стоплайте указан с путем, например https://path.ru/api
-    // в таком случае в спеке адреса будут описаны как /adress, а мы будем сравнивать с /api/adress и не сможем их сматчить    
+    // в таком случае в спеке адреса будут описаны как /adress, а мы будем сравнивать с /api/adress и не сможем их сматчить
     const template = value
       .replace(/{.*}/gm, match => `(/:${match.replace(/(\{|\})/gm, '')})`)
       .replace(/\/\(\//gm, '(/');
@@ -24,7 +25,7 @@ export const findSpec: FindSpecFn = (templates, method, url, basePath) => {
     });
 
     const res = pattern.match(pathname);
-
+    
     if (res && key.method === method) {
       result = key;
     }

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import {
   TBasePathChangeHandler,
-  THeadersChangeHandler,
   TUrlHeaders,
   TUrlItem,
 } from './types';
@@ -11,6 +10,15 @@ import { Method, ScrollWrapper } from '../../atoms';
 import { RadioGroup } from '../../molecules';
 import { TRadioOptions } from '../../atoms/radio-input/types';
 import { KeyValueField } from '../../molecules/key-value-field';
+
+type Props = {
+  environments: TRadioOptions[];
+  items: TUrlItem[];
+  initialValues: Record<string, string>;
+  headers: TUrlHeaders;
+  onBasePathChange: TBasePathChangeHandler;
+  onHeadersChange: (headers: string, endpointId: string) => void;
+};
 
 const Table = styled.table`
   width: 100%;
@@ -37,15 +45,6 @@ const EndpointName = styled.span`
   color: ${({ theme }) => theme.colors.decorative.medium.normal};
 `;
 
-type Props = {
-  environments: TRadioOptions[];
-  items: TUrlItem[];
-  initialValues: Record<string, string>;
-  headers: TUrlHeaders;
-  onBasePathChange: TBasePathChangeHandler;
-  onHeadersChange: THeadersChangeHandler;
-};
-
 export const EndpointsList = ({
   environments,
   items,
@@ -54,53 +53,57 @@ export const EndpointsList = ({
   onBasePathChange,
   onHeadersChange,
 }: Props) => {
+
   const [values, setValues] = useState(initialValues);
 
   useEffect(() => {
     setValues(initialValues);
   }, [initialValues]);
-
   return (
     <ScrollWrapper>
       <Table>
-        {items.map((item) => (
-          <tr key={item.id}>
-            <td>
-              <Method method={item.method} />
-            </td>
-            <td>
-              {item.template}
-              <EndpointName>{item.name}</EndpointName>
-            </td>
-            <td>
-              <KeyValueField
-                title="Headers"
-                placeholder="Enter each header on a new line. &#10;For example:&#10;Authorization: Bearer 123&#10;Prefer: code=200, dynamic=true"
-                onApply={(value) => {
-                  onHeadersChange(value, item.id);
-                }}
-                initialValue={headers[item.id]}
-              />
-            </td>
-            <td>
-              <RadioGroup
-                id={item.id}
-                value={values[item.id]}
-                onChange={(id, value) => {
-                  onBasePathChange(id, value || undefined);
-                  setValues((prev) => ({ ...prev, [id]: value }));
-                }}
-                items={[
-                  ...environments,
-                  {
-                    label: 'Global',
-                    value: '',
-                  },
-                ]}
-              />
-            </td>
-          </tr>
-        ))}
+        <tbody>
+          {items.map((item) => (
+            <tr key={item.id}>
+              <td>
+                <Method method={item.method} />
+              </td>
+              <td>
+                {item.template}
+                <EndpointName>{item.name}</EndpointName>
+              </td>
+              <td>
+                <KeyValueField
+                  title="Headers"
+                  id={item.id}
+                  placeholder="Enter each header on a new line. &#10;For example:&#10;Authorization: Bearer 123&#10;Prefer: code=200, dynamic=true"
+                  onApply={(value) => {
+                    onHeadersChange(value, item.id);
+                  }}
+                  initialValue={headers[item.id]}
+                  responses={item.responses}
+                />
+              </td>
+              <td>
+                <RadioGroup
+                  id={item.id}
+                  value={values[item.id]}
+                  onChange={(id, value) => {
+                    onBasePathChange(id, value || undefined);
+                    setValues((prev) => ({ ...prev, [id]: value }));
+                  }}
+                  items={[
+                    ...environments,
+                    {
+                      label: 'Global',
+                      value: '',
+                    },
+                  ]}
+                />
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </Table>
     </ScrollWrapper>
   );

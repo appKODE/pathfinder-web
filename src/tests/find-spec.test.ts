@@ -7,6 +7,12 @@ export const specSimple: UrlSpec = {
   name: 'user content',
   tags: ['user'],
   template: '/user/v2/content',
+  responses: [
+    {
+      code: '403',
+      examples: [],
+    },
+  ],
 };
 
 export const specWithPathParam: UrlSpec = {
@@ -15,6 +21,12 @@ export const specWithPathParam: UrlSpec = {
   name: 'user content',
   tags: ['user'],
   template: '/user/v2/customers/{customerId}',
+  responses: [
+    {
+      code: '403',
+      examples: [],
+    },
+  ],
 };
 
 export const specWithWithPathParamSearch: UrlSpec = {
@@ -23,6 +35,12 @@ export const specWithWithPathParamSearch: UrlSpec = {
   name: 'user content',
   tags: ['user'],
   template: '/user/v2/customers/search/{q}',
+  responses: [
+    {
+      code: '403',
+      examples: [],
+    },
+  ],
 };
 const specWithSeparatedPathParam: UrlSpec = {
   id: 'get-with-path-path-param-search-separated',
@@ -30,6 +48,12 @@ const specWithSeparatedPathParam: UrlSpec = {
   name: 'user content',
   tags: ['user'],
   template: '/user/v2/customers/search/separated/{query-string1}',
+  responses: [
+    {
+      code: '403',
+      examples: [],
+    },
+  ],
 };
 
 const templatesBySpec = new Map()

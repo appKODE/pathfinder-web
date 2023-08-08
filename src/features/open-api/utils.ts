@@ -10,6 +10,10 @@ export const operationMap = {
 } as const;
 
 export const mockSpec = {
+  info: {
+    version: '1',
+    title: 'title',
+  },
   servers: [
     {
       url: 'https://stoplight.io/mocks/some/sub-some/123123',
@@ -55,8 +59,7 @@ export const mockSpec = {
             },
           },
           403: {
-            description:
-              'attempts amount',
+            description: 'attempts amount',
             content: {
               'application/json': {
                 schema: {

@@ -3,6 +3,8 @@ import intercept from 'fetch-intercept';
 
 import { createTemplatesBySpec } from '../../lib';
 import { Header, Pathfinder } from '../../types';
+import { findSpecIdByOrigin } from '../../features/web-core/find-spec-id';
+import { findBaseApi } from '../../features/web-core/find-base-api';
 
 type TMergeGlobalEndEndpointHeadersArg = {
   globalHeaders: Header[];
@@ -12,7 +14,6 @@ const mergeGlobalAndEndpointHeaders = ({
   endpointHeaders,
   globalHeaders,
 }: TMergeGlobalEndEndpointHeadersArg): Record<string, string> => {
-  
   if (globalHeaders.length === 0) {
     return endpointHeaders.reduce((acc, current) => {
       return { ...acc, [current.key]: current.value };
@@ -31,7 +32,6 @@ const mergeGlobalAndEndpointHeaders = ({
 export function useRequestInterception(
   pathfinder: Pathfinder,
   active: boolean,
-  basePath: string,
 ) {
   // fetch
   useEffect(() => {
@@ -44,9 +44,20 @@ export function useRequestInterception(
         url: string,
         config: RequestInit | undefined,
       ): Promise<any[]> | any[] {
-        const spec = pathfinder.getSpec();
+        const specs = pathfinder.getSpecs();
 
-        const templatesBySpec = spec?.urls
+        if (!specs) {
+          return [url, config];
+        }
+        const requestOrigin = new URL(url).origin;
+        const specId = findSpecIdByOrigin(specs, requestOrigin);
+        const basePath = findBaseApi(specs, requestOrigin);
+        const spec = specs.find(spec => spec.id === specId);
+
+        if (!spec) {
+          return [url, config];
+        }
+        const templatesBySpec = spec.urls
           ? createTemplatesBySpec(spec.urls)
           : null;
 
@@ -57,13 +68,13 @@ export function useRequestInterception(
           : null;
 
         const endpointHeaders: Header[] = endpointSpec
-          ? pathfinder.getEndpointHeaders(endpointSpec.id)
+          ? pathfinder.getEndpointHeaders(endpointSpec.id, specId)
           : [];
 
         const globalHeaders = pathfinder.getGlobalHeaders();
 
         const newHeaders = mergeGlobalAndEndpointHeaders({
-          globalHeaders,
+          globalHeaders: globalHeaders[specId] || [],
           endpointHeaders,
         });
 
@@ -81,8 +92,10 @@ export function useRequestInterception(
               method,
               url,
               envSpecs,
+              specs,
             })
           : url;
+
         return [newUrl, config];
       },
     });
@@ -105,7 +118,20 @@ export function useRequestInterception(
       url: string | URL,
     ) {
       const urlString = typeof url === 'string' ? url : url.toString();
-      const spec = pathfinder.getSpec();
+      const specs = pathfinder.getSpecs();
+
+      if (!specs) {
+        return;
+      }
+      const origin = typeof url === 'string' ? new URL(url).origin : url.origin;
+      const specId = findSpecIdByOrigin(specs, origin);
+      const spec = specs.find(spec => spec.id === specId);
+
+      if (!spec) {
+        return;
+      }
+      const basePath = findBaseApi(specs, origin);
+
       const envSpecs = spec?.envs;
       const templatesBySpec = spec?.urls
         ? createTemplatesBySpec(spec.urls)
@@ -121,7 +147,7 @@ export function useRequestInterception(
         : null;
 
       const endpointHeaders: Header[] = endpointSpec
-        ? pathfinder.getEndpointHeaders(endpointSpec.id)
+        ? pathfinder.getEndpointHeaders(endpointSpec.id, specId)
         : [];
 
       const globalHeaders = pathfinder.getGlobalHeaders();
@@ -132,13 +158,14 @@ export function useRequestInterception(
             method,
             url: urlString,
             envSpecs,
+            specs,
           })
         : urlString;
 
       arguments[1] = newUrl;
 
       const newHeaders = mergeGlobalAndEndpointHeaders({
-        globalHeaders,
+        globalHeaders: globalHeaders[specId] || [],
         endpointHeaders,
       });
 

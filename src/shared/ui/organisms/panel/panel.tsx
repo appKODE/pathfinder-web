@@ -1,20 +1,15 @@
 import React, { useMemo, useState, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 
-import {
-  THeadersChangeHandler,
-  TUrlHeaders,
-  TUrlItem,
-} from '../endpoints-list/types';
-import { Button } from '../../atoms';
-import { Header, UploadSpec, RadioGroup } from '../../molecules';
-import { EndpointsList } from '../endpoints-list';
+import { THeadersChangeHandler, TUrlHeaders, TUrlItem } from '../endpoints-list/types';
+import { Header, Tabs } from '../../molecules';
 import { TRadioOptions } from '../../atoms/radio-input/types';
-import { TConfig } from './types';
+import { TConfigs } from './types';
 import { SearchInput } from '../../flows';
-import { Box, Row } from '../../core';
-import { KeyValueField } from '../../molecules/key-value-field';
-import { UrlMethod } from '../../../../types';
+import { Header as THeader, StrRecord, UrlMethod } from '../../../../types';
+import { SpecPanel } from '../spec-panel';
+import { stringifyHeaders } from '../../../lib/stringify-headers';
+import { filterPath, getData } from './helpers';
 
 const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.main.light.normal};
@@ -25,45 +20,28 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const DefaultControls = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-
-  td {
-    padding: 8px;
-  }
-`;
-
-const Text = styled.span`
-  display: block;
-  min-width: 300px;
-  font-size: 14px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-`;
-
-const RightControls = styled(Row)`
-  justify-content: end;
-  align-items: center;
-`;
+export type Path = {
+  specId: string;
+  paths: TUrlItem[];
+}
 
 type Props = {
-  config: TConfig;
-  defaultEnvId: string | null;
-  urlEnvInitialValues: Record<string, string>;
-  defaultHeaders: string;
-  urlHeaders: TUrlHeaders;
+  configs: TConfigs[];
+  defaultEnvId: StrRecord<string>;
+  urlEnvInitialValues: StrRecord<string>;
+  defaultHeaders: StrRecord<THeader[]>;
+  urlHeaders: Record<string, {} | TUrlHeaders>;
   onClose: () => void;
-  onChangeDefaultEnv: (envId: string | null) => void;
-  onChangeUrlEnv: (urlId: string, envId?: string) => void;
-  onLoadSpec: (data: unknown) => void;
-  onChangeDefaultHeaders: (headers: string) => void;
+  onChangeDefaultEnv: (envId: string | null, specId: string) => void;
+  onChangeUrlEnv: (urlId: string, specId: string, envId?: string) => void;
+  onLoadSpec: (data: unknown[]) => void;
+  onChangeDefaultHeaders: (headers: string, specId: string) => void;
   onChangeEndpointHeaders: THeadersChangeHandler;
   onResetOptions: () => void;
 };
 
 export const Panel = ({
-  config,
+  configs,
   defaultEnvId,
   urlEnvInitialValues,
   defaultHeaders,
@@ -76,135 +54,131 @@ export const Panel = ({
   onChangeEndpointHeaders,
   onResetOptions,
 }: Props) => {
-  const [defaultEnv, setDefaultValue] = useState<string>(defaultEnvId || '');
-  const [filteredPaths, setFilteredPaths] = useState<TUrlItem[]>(
-    config.urlList
-  );
+  const [defaultEnv, setDefaultValue] = useState<
+    Record<string, string>
+  >(defaultEnvId);
+  const { methods: initMethods, paths: defaultPaths } = getData(configs);
+  const [filteredMethods, setFilteredMethods] = useState<UrlMethod[]>(initMethods);
   const [searchValue, setSearchValue] = useState<string>('');
+  const [filteredPaths, setFilteredPaths] = useState<Path[]>(defaultPaths);
+  const [currSpec, setCurrSpec] = useState<string | null>(configs.at(0)?.specId || null)
 
-  const methods = Array.from(
-    new Set(config.urlList.map((item) => item.method))
-  );
-  const [filteredMethods, setFilteredMethods] = useState<UrlMethod[]>(methods);
+  useEffect(() => {
+    setFilteredPaths(defaultPaths)
+    if (!currSpec) {
+      setCurrSpec(configs.at(0)?.specId || null)
+    }
+  }, [configs])
+
+  useEffect(() => {
+    const newPaths = filterPath(defaultPaths, filteredMethods, searchValue);
+    setFilteredPaths(newPaths);
+  }, [searchValue, filteredMethods]);
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleEscButton);
+    return () => document.removeEventListener('keydown', handleEscButton);
+  }, []);
 
   const onHandleChange = (value: string) => {
     setSearchValue(value);
   };
 
   const handleEscButton = (e: KeyboardEvent) => {
-    if (!e.repeat && e.code === "Escape") {
-      onClose()
+    if (!e.repeat && e.key === 'Escape') {
+      onClose();
     }
-  }
+  };
 
-  const environments = useMemo<TRadioOptions[]>(
+  const environments = useMemo<
+    {
+      specId: string;
+      enviroments: TRadioOptions[];
+    }[]
+  >(
     () =>
-      config.envList.map((env) => ({
-        value: env.id,
-        label: env.name,
-      })),
-    [config]
+      configs.map(config => {
+        return {
+          specId: config.specId,
+          enviroments: config.config.envList.map(env => ({
+            value: env.id,
+            label: env.name,
+          })),
+        };
+      }),
+    [configs],
   );
 
   const resetOptions = useCallback(() => {
-    setDefaultValue('');
+    setDefaultValue({});
     onResetOptions();
   }, [onResetOptions]);
 
   const onClearHandler = () => {
-    setFilteredPaths(config.urlList);
+    setFilteredPaths(defaultPaths);
     setSearchValue('');
   };
 
   const onSelectMethod = (selectedMethod: UrlMethod | null) => {
-    if (!selectedMethod) {
-      return setFilteredMethods(methods);
-    }
-    setFilteredMethods(methods.filter((method) => method === selectedMethod));
+    if (selectedMethod) {
+      setFilteredMethods([selectedMethod])
+    };
   };
 
-  useEffect(() => {
-    setFilteredPaths(
-      config.urlList.filter(
-        (item) =>
-          filteredMethods.includes(item.method) &&
-          item.template.includes(searchValue)
-      )
-    );
-  }, [searchValue, filteredMethods]);
-
-  useEffect(() => {
-    document.addEventListener('keydown', handleEscButton)
-    return () => document.removeEventListener('keydown', handleEscButton)
-  },[])
+  const specConfig = configs.find(spec => spec.specId === currSpec)
+  const tabs = configs.map(config => ({
+    children: config.specId,
+    count: filteredPaths.find(paths => paths.specId === config.specId)?.paths.length,
+    onClick: () => setCurrSpec(config.specId),
+  }))
 
   return (
     <Wrapper>
       <Header onClose={onClose}>Pathfinder</Header>
-      <UploadSpec onLoad={onLoadSpec} />
       <SearchInput
         value={searchValue}
-        methods={methods}
+        methods={initMethods}
         onClearHandler={onClearHandler}
         onSelectMethod={onSelectMethod}
         onHandleChange={onHandleChange}
       />
-      {environments.length > 0 && (
-        <DefaultControls>
-          <tbody>
-            <tr>
-              <td>
-                <Text>Use the requests environment for all requests:</Text>
-              </td>
-              <td>
-                <RightControls>
-                  <KeyValueField
-                    title="Headers"
-                    placeholder="Enter each header on a new line. &#10;For example:&#10;Authorization: Bearer 123&#10;Prefer: code=200, dynamic=true"
-                    onApply={onChangeDefaultHeaders}
-                    initialValue={defaultHeaders}
-                  />
-                  <Box w={16} />
-                  <RadioGroup
-                    id={'default'}
-                    value={defaultEnv}
-                    color={'red'}
-                    onChange={(_, value) => {
-                      onChangeDefaultEnv(value || null);
-                      setDefaultValue(value);
-                    }}
-                    items={[
-                      ...environments,
-                      {
-                        label: 'Default',
-                        value: '',
-                      },
-                    ]}
-                  />
-                  <Box w={16} />
-                  <Button
-                    active
-                    title="reset to default"
-                    onClick={resetOptions}
-                  >
-                    reset to default
-                  </Button>
-                </RightControls>
-              </td>
-            </tr>
-          </tbody>
-        </DefaultControls>
-      )}
-      {config.urlList.length > 0 && (
-        <EndpointsList
-          headers={urlHeaders}
-          environments={environments}
-          items={filteredPaths}
-          initialValues={urlEnvInitialValues}
-          onBasePathChange={onChangeUrlEnv}
-          onHeadersChange={onChangeEndpointHeaders}
+      <Tabs
+        onLoadSpec={onLoadSpec}
+        tabs={tabs}
+      />
+      {specConfig &&
+        <SpecPanel
+          specId={specConfig.specId}
+          environments={
+            environments.find(env => env.specId === specConfig.specId)?.enviroments
+          }
+          defaultHeaders={stringifyHeaders(
+            defaultHeaders[specConfig.specId],
+          )}
+          defaultEnv={
+            defaultEnv[specConfig.specId]
+          }
+          config={specConfig.config}
+          urlHeaders={
+            urlHeaders[specConfig.specId]
+          }
+          filteredPaths={
+            filteredPaths.find(paths => paths.specId === specConfig.specId)?.paths
+          }
+          urlEnvInitialValues={urlEnvInitialValues}
+          onChangeDefaultHeaders={onChangeDefaultHeaders}
+          resetOptions={resetOptions}
+          onChangeDefaultEnv={onChangeDefaultEnv}
+          setDefaultValue={(value: string) => {
+            setDefaultValue({ ...defaultEnv, [specConfig.specId]: value });
+          }}
+          onChangeUrlEnv={(urlId, envId) => {
+            onChangeUrlEnv(urlId, specConfig.specId, envId)
+          }}
+          onChangeEndpointHeaders={onChangeEndpointHeaders}
         />
-      )}
+      }
+
     </Wrapper>
   );
 };

@@ -1,8 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots UI/atoms/Badge Method Story 1`] = `
+<div
+  className="sc-bczRLJ cUlPwE"
+/>
+`;
+
 exports[`Storyshots UI/atoms/Button Button Story 1`] = `
 <button
-  className="sc-bczRLJ kIQnYv"
+  className="sc-dkzDqf dLKbsm"
 >
   Text
 </button>
@@ -10,7 +16,7 @@ exports[`Storyshots UI/atoms/Button Button Story 1`] = `
 
 exports[`Storyshots UI/atoms/Method Method Story 1`] = `
 <span
-  className="sc-gsnTZi hKLeqY"
+  className="sc-hKMtZM knHcsA"
 >
   POST
 </span>
@@ -18,7 +24,7 @@ exports[`Storyshots UI/atoms/Method Method Story 1`] = `
 
 exports[`Storyshots UI/atoms/PanelButton Panel Button Story 1`] = `
 <button
-  className="sc-dkzDqf epbTkk"
+  className="sc-eCYdqJ kOdkxy"
   onClick={[Function]}
 >
   <svg
@@ -42,34 +48,77 @@ exports[`Storyshots UI/atoms/PanelButton Panel Button Story 1`] = `
 
 exports[`Storyshots UI/atoms/RadioInput Radio Input Story 1`] = `
 <label
-  className="sc-eCYdqJ dkXXkk"
+  className="sc-gKXOVf dAeAHg"
   htmlFor="undefined-undefined"
 >
   <input
-    className="sc-jSMfEi krwMNI"
+    className="sc-iBkjds cWZeBX"
     id="undefined-undefined"
     type="radio"
   />
   <span
-    className="sc-hKMtZM jEgUfa"
+    className="sc-jSMfEi iJxedB"
   />
 </label>
 `;
 
+exports[`Storyshots UI/atoms/tab Method Story 1`] = `
+Array [
+  <button
+    className="sc-ftvSup gScnHx"
+  />,
+  <button
+    className="sc-ftvSup gScnHx"
+  />,
+]
+`;
+
+exports[`Storyshots UI/atoms/tabs Method Story 1`] = `
+<div
+  className="sc-kLLXSd hgxEfV"
+>
+  <button
+    className="sc-ftvSup gScnHx"
+  />
+  <button
+    className="sc-ftvSup gScnHx"
+  >
+    <label
+      className="sc-ezWOiH hOiwUM"
+      htmlFor="upload-spec"
+    >
+      <span
+        className="sc-gicCDI IbWA-D"
+      >
+        +
+      </span>
+      <input
+        accept="application/json"
+        className="sc-bZkfAO nOrPZ"
+        id="upload-spec"
+        multiple={true}
+        onChange={[Function]}
+        type="file"
+      />
+    </label>
+  </button>
+</div>
+`;
+
 exports[`Storyshots UI/molecules/Header Header Story 1`] = `
 <div
-  className="sc-hAZoDl gfzPfq"
+  className="sc-dmRaPn kdnWIS"
 >
   <h1
-    className="sc-fnykZs nHPrW"
+    className="sc-kgflAQ huNVkz"
   >
     Children
   </h1>
   <div
-    className="sc-fEOsli jUwieR"
+    className="sc-fLlhyt cabJiY"
   >
     <button
-      className="sc-bczRLJ gDVeQI"
+      className="sc-dkzDqf jgybLV"
       title="Close"
     >
       <svg
@@ -90,31 +139,31 @@ exports[`Storyshots UI/molecules/Header Header Story 1`] = `
 
 exports[`Storyshots UI/molecules/KeyValueField Key Value Field Story 1`] = `
 <div
-  className="sc-dmRaPn cluTth"
+  className="sc-ivTmOn lGvzm"
 >
   <button
-    className="sc-bczRLJ kIQnYv"
+    className="sc-dkzDqf dLKbsm"
     onClick={[Function]}
   >
     title
   </button>
   <div
-    className="sc-bBrHrO bCAnWB"
+    className="sc-bczRLJ cUlPwE"
   />
 </div>
 `;
 
 exports[`Storyshots UI/molecules/RadioGroup Radio Group Story 1`] = `
 <div
-  className="sc-ivTmOn etiFLH"
+  className="sc-bBrHrO kKLzJF"
 >
   <label
-    className="sc-eCYdqJ dkXXkk"
+    className="sc-gKXOVf dAeAHg"
     htmlFor="1-label"
   >
     <input
       checked={false}
-      className="sc-jSMfEi fMHyaV"
+      className="sc-iBkjds hzkUcK"
       id="1-label"
       name={1}
       onChange={[Function]}
@@ -122,17 +171,17 @@ exports[`Storyshots UI/molecules/RadioGroup Radio Group Story 1`] = `
       value="value"
     />
     <span
-      className="sc-hKMtZM bOBNTr"
+      className="sc-jSMfEi kApmTs"
     />
     label
   </label>
   <label
-    className="sc-eCYdqJ dkXXkk"
+    className="sc-gKXOVf dAeAHg"
     htmlFor="1-label"
   >
     <input
       checked={false}
-      className="sc-jSMfEi fMHyaV"
+      className="sc-iBkjds hzkUcK"
       id="1-label"
       name={1}
       onChange={[Function]}
@@ -140,17 +189,17 @@ exports[`Storyshots UI/molecules/RadioGroup Radio Group Story 1`] = `
       value="value"
     />
     <span
-      className="sc-hKMtZM bOBNTr"
+      className="sc-jSMfEi kApmTs"
     />
     label
   </label>
   <label
-    className="sc-eCYdqJ dkXXkk"
+    className="sc-gKXOVf dAeAHg"
     htmlFor="1-label"
   >
     <input
       checked={false}
-      className="sc-jSMfEi fMHyaV"
+      className="sc-iBkjds hzkUcK"
       id="1-label"
       name={1}
       onChange={[Function]}
@@ -158,7 +207,7 @@ exports[`Storyshots UI/molecules/RadioGroup Radio Group Story 1`] = `
       value="value"
     />
     <span
-      className="sc-hKMtZM bOBNTr"
+      className="sc-jSMfEi kApmTs"
     />
     label
   </label>
@@ -167,39 +216,19 @@ exports[`Storyshots UI/molecules/RadioGroup Radio Group Story 1`] = `
 
 exports[`Storyshots UI/molecules/UploadSpec Upload Spec Story 1`] = `
 <label
-  className="sc-llJcti cjTRrP"
+  className="sc-ezWOiH hOiwUM"
   htmlFor="upload-spec"
 >
   <span
-    className="sc-cxabCf fGsWCd"
+    className="sc-gicCDI IbWA-D"
   >
-    Upload specification
-    <svg
-      fill="none"
-      height={14}
-      viewBox="0 0 24 24"
-      width={14}
-    >
-      <path
-        d="M12 5V19"
-        stroke="#333"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-      />
-      <path
-        d="M5 12H19"
-        stroke="#333"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-      />
-    </svg>
+    +
   </span>
   <input
     accept="application/json"
-    className="sc-iIPllB eYuPsg"
+    className="sc-bZkfAO nOrPZ"
     id="upload-spec"
+    multiple={true}
     onChange={[Function]}
     type="file"
   />
@@ -208,177 +237,179 @@ exports[`Storyshots UI/molecules/UploadSpec Upload Spec Story 1`] = `
 
 exports[`Storyshots UI/organisms/EndpointsList Endpoints List Story 1`] = `
 <div
-  className="sc-gKXOVf hjGPlB"
+  className="sc-papXJ gRfOuV"
 >
   <table
-    className="sc-gicCDI iELRck"
+    className="sc-ikZpkk dFFKUX"
   >
-    <tr>
-      <td>
-        <span
-          className="sc-gsnTZi hKLeqY"
-        >
-          POST
-        </span>
-      </td>
-      <td>
-        /user
-        <span
-          className="sc-ezWOiH ilEJhw"
-        >
-          Endpoint name
-        </span>
-      </td>
-      <td>
-        <div
-          className="sc-dmRaPn cluTth"
-        >
-          <button
-            className="sc-bczRLJ kIQnYv"
-            onClick={[Function]}
+    <tbody>
+      <tr>
+        <td>
+          <span
+            className="sc-hKMtZM knHcsA"
           >
-            Headers
-          </button>
+            POST
+          </span>
+        </td>
+        <td>
+          /user
+          <span
+            className="sc-jIZahH belJKm"
+          >
+            Endpoint name
+          </span>
+        </td>
+        <td>
           <div
-            className="sc-bBrHrO bCAnWB"
-          />
-        </div>
-      </td>
-      <td>
-        <div
-          className="sc-ivTmOn etiFLH"
-        >
-          <label
-            className="sc-eCYdqJ dkXXkk"
-            htmlFor="1-label"
+            className="sc-ivTmOn lGvzm"
           >
-            <input
-              checked={false}
-              className="sc-jSMfEi krwMNI"
-              id="1-label"
-              name="1"
-              onChange={[Function]}
-              type="radio"
-              value="1"
+            <button
+              className="sc-dkzDqf dLKbsm"
+              onClick={[Function]}
+            >
+              Headers
+            </button>
+            <div
+              className="sc-bczRLJ cUlPwE"
             />
-            <span
-              className="sc-hKMtZM jEgUfa"
-            />
-            label
-          </label>
-          <label
-            className="sc-eCYdqJ dkXXkk"
-            htmlFor="1-Global"
+          </div>
+        </td>
+        <td>
+          <div
+            className="sc-bBrHrO kKLzJF"
           >
-            <input
-              checked={true}
-              className="sc-jSMfEi krwMNI"
-              id="1-Global"
-              name="1"
-              onChange={[Function]}
-              type="radio"
-              value=""
-            />
-            <span
-              className="sc-hKMtZM jEgUfa"
-            />
-            Global
-          </label>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span
-          className="sc-gsnTZi hKLeqY"
-        >
-          POST
-        </span>
-      </td>
-      <td>
-        /user
-        <span
-          className="sc-ezWOiH ilEJhw"
-        >
-          Endpoint name
-        </span>
-      </td>
-      <td>
-        <div
-          className="sc-dmRaPn cluTth"
-        >
-          <button
-            className="sc-bczRLJ kIQnYv"
-            onClick={[Function]}
+            <label
+              className="sc-gKXOVf dAeAHg"
+              htmlFor="1-label"
+            >
+              <input
+                checked={false}
+                className="sc-iBkjds cWZeBX"
+                id="1-label"
+                name="1"
+                onChange={[Function]}
+                type="radio"
+                value="1"
+              />
+              <span
+                className="sc-jSMfEi iJxedB"
+              />
+              label
+            </label>
+            <label
+              className="sc-gKXOVf dAeAHg"
+              htmlFor="1-Global"
+            >
+              <input
+                checked={true}
+                className="sc-iBkjds cWZeBX"
+                id="1-Global"
+                name="1"
+                onChange={[Function]}
+                type="radio"
+                value=""
+              />
+              <span
+                className="sc-jSMfEi iJxedB"
+              />
+              Global
+            </label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span
+            className="sc-hKMtZM knHcsA"
           >
-            Headers
-          </button>
-        </div>
-      </td>
-      <td>
-        <div
-          className="sc-ivTmOn etiFLH"
-        >
-          <label
-            className="sc-eCYdqJ dkXXkk"
-            htmlFor="2-label"
+            POST
+          </span>
+        </td>
+        <td>
+          /user
+          <span
+            className="sc-jIZahH belJKm"
           >
-            <input
-              checked={false}
-              className="sc-jSMfEi krwMNI"
-              id="2-label"
-              name="2"
-              onChange={[Function]}
-              type="radio"
-              value="1"
-            />
-            <span
-              className="sc-hKMtZM jEgUfa"
-            />
-            label
-          </label>
-          <label
-            className="sc-eCYdqJ dkXXkk"
-            htmlFor="2-Global"
+            Endpoint name
+          </span>
+        </td>
+        <td>
+          <div
+            className="sc-ivTmOn lGvzm"
           >
-            <input
-              checked={false}
-              className="sc-jSMfEi krwMNI"
-              id="2-Global"
-              name="2"
-              onChange={[Function]}
-              type="radio"
-              value=""
-            />
-            <span
-              className="sc-hKMtZM jEgUfa"
-            />
-            Global
-          </label>
-        </div>
-      </td>
-    </tr>
+            <button
+              className="sc-dkzDqf dLKbsm"
+              onClick={[Function]}
+            >
+              Headers
+            </button>
+          </div>
+        </td>
+        <td>
+          <div
+            className="sc-bBrHrO kKLzJF"
+          >
+            <label
+              className="sc-gKXOVf dAeAHg"
+              htmlFor="2-label"
+            >
+              <input
+                checked={false}
+                className="sc-iBkjds cWZeBX"
+                id="2-label"
+                name="2"
+                onChange={[Function]}
+                type="radio"
+                value="1"
+              />
+              <span
+                className="sc-jSMfEi iJxedB"
+              />
+              label
+            </label>
+            <label
+              className="sc-gKXOVf dAeAHg"
+              htmlFor="2-Global"
+            >
+              <input
+                checked={false}
+                className="sc-iBkjds cWZeBX"
+                id="2-Global"
+                name="2"
+                onChange={[Function]}
+                type="radio"
+                value=""
+              />
+              <span
+                className="sc-jSMfEi iJxedB"
+              />
+              Global
+            </label>
+          </div>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
 `;
 
 exports[`Storyshots UI/organisms/Panel Basic 1`] = `
 <div
-  className="sc-bZkfAO edCQVW"
+  className="sc-ciZhAO hjuqGr"
 >
   <div
-    className="sc-hAZoDl gfzPfq"
+    className="sc-dmRaPn kdnWIS"
   >
     <h1
-      className="sc-fnykZs nHPrW"
+      className="sc-kgflAQ huNVkz"
     >
       Pathfinder
     </h1>
     <div
-      className="sc-fEOsli jUwieR"
+      className="sc-fLlhyt cabJiY"
     >
       <button
-        className="sc-bczRLJ gDVeQI"
+        className="sc-dkzDqf jgybLV"
         title="Close"
       >
         <svg
@@ -395,62 +426,24 @@ exports[`Storyshots UI/organisms/Panel Basic 1`] = `
       </button>
     </div>
   </div>
-  <label
-    className="sc-llJcti cjTRrP"
-    htmlFor="upload-spec"
-  >
-    <span
-      className="sc-cxabCf fGsWCd"
-    >
-      Upload specification
-      <svg
-        fill="none"
-        height={14}
-        viewBox="0 0 24 24"
-        width={14}
-      >
-        <path
-          d="M12 5V19"
-          stroke="#333"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-        />
-        <path
-          d="M5 12H19"
-          stroke="#333"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-        />
-      </svg>
-    </span>
-    <input
-      accept="application/json"
-      className="sc-iIPllB eYuPsg"
-      id="upload-spec"
-      onChange={[Function]}
-      type="file"
-    />
-  </label>
   <div
-    className="sc-crXcEl kQvrzl"
+    className="sc-bjUoiL loFnKB"
   >
     <div
-      className="sc-iBkjds jUhoJF"
+      className="sc-evZas bqULKD"
     >
       <button
-        className="sc-ftvSup gdfGrv"
+        className="sc-breuTD eLikOR"
         onClick={[Function]}
         type="button"
       >
         <p
-          className="sc-papXJ kwkYmf"
+          className="sc-ksZaOG kWrVBH"
         >
           All methods
         </p>
         <div
-          className="sc-jqUVSM bcYAES"
+          className="sc-hAZoDl gZiIeM"
         >
           <svg
             fill="none"
@@ -471,127 +464,169 @@ exports[`Storyshots UI/organisms/Panel Basic 1`] = `
       </button>
     </div>
     <div
-      className="sc-ksZaOG jWwelb"
+      className="sc-hHLeRK fzCOrs"
     />
     <input
       autoComplete="off"
-      className="sc-evZas gQkund"
+      className="sc-idiyUo hdpfuB"
       onChange={[Function]}
       placeholder="Search path..."
       value=""
     />
     
   </div>
+  <div
+    className="sc-kLLXSd hgxEfV"
+  >
+    <button
+      className="sc-ftvSup gScnHx"
+      onClick={[Function]}
+    >
+      <div
+        className="sc-bczRLJ cUlPwE"
+      >
+        <div
+          className="sc-gsnTZi jqNmJQ"
+        >
+          30
+        </div>
+      </div>
+      local
+    </button>
+    <button
+      className="sc-ftvSup gScnHx"
+    >
+      <label
+        className="sc-ezWOiH hOiwUM"
+        htmlFor="upload-spec"
+      >
+        <span
+          className="sc-gicCDI IbWA-D"
+        >
+          +
+        </span>
+        <input
+          accept="application/json"
+          className="sc-bZkfAO nOrPZ"
+          id="upload-spec"
+          multiple={true}
+          onChange={[Function]}
+          type="file"
+        />
+      </label>
+    </button>
+  </div>
   <table
-    className="sc-kLLXSd bYwJHS"
+    className="sc-himrzO beEiqF"
   >
     <tbody>
       <tr>
         <td>
           <span
-            className="sc-ikZpkk egkuXd"
+            className="sc-gXmSlM gJOTqV"
           >
             Use the requests environment for all requests:
           </span>
         </td>
         <td>
           <div
-            className="sc-dIouRR sc-jIZahH dLbDzL dQuHqX"
+            className="sc-iqcoie sc-cCsOjp gvgoKw fLyYgN"
           >
             <div
-              className="sc-dmRaPn cluTth"
+              className="sc-ivTmOn lGvzm"
             >
               <button
-                className="sc-bczRLJ kIQnYv"
+                className="sc-dkzDqf dLKbsm"
                 onClick={[Function]}
               >
                 Headers
               </button>
+              
             </div>
             <div
-              className="sc-bjUoiL biWkbi"
+              className="sc-jqUVSM jqmlsv"
             />
             <div
-              className="sc-ivTmOn etiFLH"
+              className="sc-bBrHrO kKLzJF"
             >
               <label
-                className="sc-eCYdqJ dkXXkk"
-                htmlFor="default-Local"
+                className="sc-gKXOVf dAeAHg"
+                htmlFor="local-Local"
               >
                 <input
                   checked={true}
-                  className="sc-jSMfEi fMHyaV"
-                  id="default-Local"
-                  name="default"
+                  className="sc-iBkjds hzkUcK"
+                  id="local-Local"
+                  name="local"
                   onChange={[Function]}
                   type="radio"
                   value="local"
                 />
                 <span
-                  className="sc-hKMtZM bOBNTr"
+                  className="sc-jSMfEi kApmTs"
                 />
                 Local
               </label>
               <label
-                className="sc-eCYdqJ dkXXkk"
-                htmlFor="default-Prod"
+                className="sc-gKXOVf dAeAHg"
+                htmlFor="local-Prod"
               >
                 <input
                   checked={false}
-                  className="sc-jSMfEi fMHyaV"
-                  id="default-Prod"
-                  name="default"
+                  className="sc-iBkjds hzkUcK"
+                  id="local-Prod"
+                  name="local"
                   onChange={[Function]}
                   type="radio"
                   value="prod"
                 />
                 <span
-                  className="sc-hKMtZM bOBNTr"
+                  className="sc-jSMfEi kApmTs"
                 />
                 Prod
               </label>
               <label
-                className="sc-eCYdqJ dkXXkk"
-                htmlFor="default-Dev"
+                className="sc-gKXOVf dAeAHg"
+                htmlFor="local-Dev"
               >
                 <input
                   checked={false}
-                  className="sc-jSMfEi fMHyaV"
-                  id="default-Dev"
-                  name="default"
+                  className="sc-iBkjds hzkUcK"
+                  id="local-Dev"
+                  name="local"
                   onChange={[Function]}
                   type="radio"
                   value="dev"
                 />
                 <span
-                  className="sc-hKMtZM bOBNTr"
+                  className="sc-jSMfEi kApmTs"
                 />
                 Dev
               </label>
               <label
-                className="sc-eCYdqJ dkXXkk"
-                htmlFor="default-Default"
+                className="sc-gKXOVf dAeAHg"
+                htmlFor="local-Default"
               >
                 <input
                   checked={false}
-                  className="sc-jSMfEi fMHyaV"
-                  id="default-Default"
-                  name="default"
+                  className="sc-iBkjds hzkUcK"
+                  id="local-Default"
+                  name="local"
                   onChange={[Function]}
                   type="radio"
                   value=""
                 />
                 <span
-                  className="sc-hKMtZM bOBNTr"
+                  className="sc-jSMfEi kApmTs"
                 />
                 Default
               </label>
             </div>
             <div
-              className="sc-bjUoiL biWkbi"
+              className="sc-jqUVSM jqmlsv"
             />
             <button
-              className="sc-bczRLJ emCMmG"
+              className="sc-dkzDqf jXsOtD"
               onClick={[Function]}
               title="reset to default"
             >
@@ -602,3249 +637,25 @@ exports[`Storyshots UI/organisms/Panel Basic 1`] = `
       </tr>
     </tbody>
   </table>
-  <div
-    className="sc-gKXOVf hjGPlB"
-  >
-    <table
-      className="sc-gicCDI iELRck"
-    >
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/0/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-            <div
-              className="sc-bBrHrO bCAnWB"
-            />
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="0-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="0-Local"
-                name="0"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="0-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="0-Prod"
-                name="0"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="0-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="0-Dev"
-                name="0"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="0-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="0-Global"
-                name="0"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/1/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-            <div
-              className="sc-bBrHrO bCAnWB"
-            />
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="1-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="1-Local"
-                name="1"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="1-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="1-Prod"
-                name="1"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="1-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="1-Dev"
-                name="1"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="1-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="1-Global"
-                name="1"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/2/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="2-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="2-Local"
-                name="2"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="2-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="2-Prod"
-                name="2"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="2-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="2-Dev"
-                name="2"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="2-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="2-Global"
-                name="2"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/3/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="3-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="3-Local"
-                name="3"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="3-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="3-Prod"
-                name="3"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="3-Dev"
-            >
-              <input
-                checked={true}
-                className="sc-jSMfEi krwMNI"
-                id="3-Dev"
-                name="3"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="3-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="3-Global"
-                name="3"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/4/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="4-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="4-Local"
-                name="4"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="4-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="4-Prod"
-                name="4"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="4-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="4-Dev"
-                name="4"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="4-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="4-Global"
-                name="4"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/5/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="5-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="5-Local"
-                name="5"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="5-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="5-Prod"
-                name="5"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="5-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="5-Dev"
-                name="5"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="5-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="5-Global"
-                name="5"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/6/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="6-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="6-Local"
-                name="6"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="6-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="6-Prod"
-                name="6"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="6-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="6-Dev"
-                name="6"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="6-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="6-Global"
-                name="6"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/7/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="7-Local"
-            >
-              <input
-                checked={true}
-                className="sc-jSMfEi krwMNI"
-                id="7-Local"
-                name="7"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="7-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="7-Prod"
-                name="7"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="7-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="7-Dev"
-                name="7"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="7-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="7-Global"
-                name="7"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/8/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="8-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="8-Local"
-                name="8"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="8-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="8-Prod"
-                name="8"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="8-Dev"
-            >
-              <input
-                checked={true}
-                className="sc-jSMfEi krwMNI"
-                id="8-Dev"
-                name="8"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="8-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="8-Global"
-                name="8"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/9/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="9-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="9-Local"
-                name="9"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="9-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="9-Prod"
-                name="9"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="9-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="9-Dev"
-                name="9"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="9-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="9-Global"
-                name="9"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/10/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="10-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="10-Local"
-                name="10"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="10-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="10-Prod"
-                name="10"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="10-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="10-Dev"
-                name="10"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="10-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="10-Global"
-                name="10"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/11/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="11-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="11-Local"
-                name="11"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="11-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="11-Prod"
-                name="11"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="11-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="11-Dev"
-                name="11"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="11-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="11-Global"
-                name="11"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/12/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="12-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="12-Local"
-                name="12"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="12-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="12-Prod"
-                name="12"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="12-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="12-Dev"
-                name="12"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="12-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="12-Global"
-                name="12"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/13/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="13-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="13-Local"
-                name="13"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="13-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="13-Prod"
-                name="13"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="13-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="13-Dev"
-                name="13"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="13-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="13-Global"
-                name="13"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/14/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="14-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="14-Local"
-                name="14"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="14-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="14-Prod"
-                name="14"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="14-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="14-Dev"
-                name="14"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="14-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="14-Global"
-                name="14"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/15/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="15-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="15-Local"
-                name="15"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="15-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="15-Prod"
-                name="15"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="15-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="15-Dev"
-                name="15"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="15-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="15-Global"
-                name="15"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/16/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="16-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="16-Local"
-                name="16"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="16-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="16-Prod"
-                name="16"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="16-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="16-Dev"
-                name="16"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="16-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="16-Global"
-                name="16"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/17/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="17-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="17-Local"
-                name="17"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="17-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="17-Prod"
-                name="17"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="17-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="17-Dev"
-                name="17"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="17-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="17-Global"
-                name="17"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/18/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="18-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="18-Local"
-                name="18"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="18-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="18-Prod"
-                name="18"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="18-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="18-Dev"
-                name="18"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="18-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="18-Global"
-                name="18"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/19/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="19-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="19-Local"
-                name="19"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="19-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="19-Prod"
-                name="19"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="19-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="19-Dev"
-                name="19"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="19-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="19-Global"
-                name="19"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/20/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="20-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="20-Local"
-                name="20"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="20-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="20-Prod"
-                name="20"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="20-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="20-Dev"
-                name="20"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="20-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="20-Global"
-                name="20"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/21/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="21-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="21-Local"
-                name="21"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="21-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="21-Prod"
-                name="21"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="21-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="21-Dev"
-                name="21"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="21-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="21-Global"
-                name="21"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/22/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="22-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="22-Local"
-                name="22"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="22-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="22-Prod"
-                name="22"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="22-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="22-Dev"
-                name="22"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="22-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="22-Global"
-                name="22"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/23/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="23-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="23-Local"
-                name="23"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="23-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="23-Prod"
-                name="23"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="23-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="23-Dev"
-                name="23"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="23-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="23-Global"
-                name="23"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/24/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="24-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="24-Local"
-                name="24"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="24-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="24-Prod"
-                name="24"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="24-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="24-Dev"
-                name="24"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="24-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="24-Global"
-                name="24"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/25/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="25-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="25-Local"
-                name="25"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="25-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="25-Prod"
-                name="25"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="25-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="25-Dev"
-                name="25"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="25-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="25-Global"
-                name="25"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/26/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="26-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="26-Local"
-                name="26"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="26-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="26-Prod"
-                name="26"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="26-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="26-Dev"
-                name="26"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="26-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="26-Global"
-                name="26"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/27/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="27-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="27-Local"
-                name="27"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="27-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="27-Prod"
-                name="27"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="27-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="27-Dev"
-                name="27"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="27-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="27-Global"
-                name="27"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi jkIOLT"
-          >
-            GET
-          </span>
-        </td>
-        <td>
-          /user/28/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="28-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="28-Local"
-                name="28"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="28-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="28-Prod"
-                name="28"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="28-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="28-Dev"
-                name="28"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="28-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="28-Global"
-                name="28"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span
-            className="sc-gsnTZi hKLeqY"
-          >
-            POST
-          </span>
-        </td>
-        <td>
-          /user/29/list
-          <span
-            className="sc-ezWOiH ilEJhw"
-          >
-            Endpoint Name
-          </span>
-        </td>
-        <td>
-          <div
-            className="sc-dmRaPn cluTth"
-          >
-            <button
-              className="sc-bczRLJ kIQnYv"
-              onClick={[Function]}
-            >
-              Headers
-            </button>
-          </div>
-        </td>
-        <td>
-          <div
-            className="sc-ivTmOn etiFLH"
-          >
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="29-Local"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="29-Local"
-                name="29"
-                onChange={[Function]}
-                type="radio"
-                value="local"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Local
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="29-Prod"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="29-Prod"
-                name="29"
-                onChange={[Function]}
-                type="radio"
-                value="prod"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Prod
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="29-Dev"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="29-Dev"
-                name="29"
-                onChange={[Function]}
-                type="radio"
-                value="dev"
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Dev
-            </label>
-            <label
-              className="sc-eCYdqJ dkXXkk"
-              htmlFor="29-Global"
-            >
-              <input
-                checked={false}
-                className="sc-jSMfEi krwMNI"
-                id="29-Global"
-                name="29"
-                onChange={[Function]}
-                type="radio"
-                value=""
-              />
-              <span
-                className="sc-hKMtZM jEgUfa"
-              />
-              Global
-            </label>
-          </div>
-        </td>
-      </tr>
-    </table>
-  </div>
 </div>
 `;
 
 exports[`Storyshots ui/flows/search-input/atoms/MethodSelect Basic 1`] = `
 <div
-  className="sc-iBkjds jUhoJF"
+  className="sc-evZas bqULKD"
 >
   <button
-    className="sc-ftvSup gdfGrv"
+    className="sc-breuTD eLikOR"
     onClick={[Function]}
     type="button"
   >
     <p
-      className="sc-papXJ kwkYmf"
+      className="sc-ksZaOG kWrVBH"
     >
       All methods
     </p>
     <div
-      className="sc-jqUVSM bcYAES"
+      className="sc-hAZoDl gZiIeM"
     >
       <svg
         fill="none"
@@ -3868,23 +679,23 @@ exports[`Storyshots ui/flows/search-input/atoms/MethodSelect Basic 1`] = `
 
 exports[`Storyshots ui/flows/search-input/molecules/SearchInput Basic 1`] = `
 <div
-  className="sc-crXcEl kQvrzl"
+  className="sc-bjUoiL loFnKB"
 >
   <div
-    className="sc-iBkjds jUhoJF"
+    className="sc-evZas bqULKD"
   >
     <button
-      className="sc-ftvSup gdfGrv"
+      className="sc-breuTD eLikOR"
       onClick={[Function]}
       type="button"
     >
       <p
-        className="sc-papXJ kwkYmf"
+        className="sc-ksZaOG kWrVBH"
       >
         All methods
       </p>
       <div
-        className="sc-jqUVSM bcYAES"
+        className="sc-hAZoDl gZiIeM"
       >
         <svg
           fill="none"
@@ -3905,11 +716,11 @@ exports[`Storyshots ui/flows/search-input/molecules/SearchInput Basic 1`] = `
     </button>
   </div>
   <div
-    className="sc-ksZaOG jWwelb"
+    className="sc-hHLeRK fzCOrs"
   />
   <input
     autoComplete="off"
-    className="sc-evZas gQkund"
+    className="sc-idiyUo hdpfuB"
     onChange={[Function]}
     placeholder="Search path..."
     value=""

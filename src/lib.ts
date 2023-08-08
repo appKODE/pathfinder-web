@@ -7,8 +7,10 @@ import {
   GlobalEnvSetter,
   PathfinderBuilder,
   ResetHandler,
+  Spec,
   SpecGetter,
-  SpecSetter,
+  SpecsGetter,
+  SpecsLibSetter,
   UrlEnvGetter,
   UrlEnvSetter,
   UrlSpec,
@@ -38,6 +40,7 @@ export function createTemplatesBySpec(
 }
 
 const createSpec = () => {
+  let id: string = '';
   let urls: UrlSpec[] = [];
   let envs: EnvSpec[] = [];
   return {
@@ -47,6 +50,9 @@ const createSpec = () => {
     setEnvs(data: EnvSpec[]) {
       envs = data;
     },
+    setId(newId: string) {
+      id = newId;
+    },
     getTemplatesBySpec() {
       return createTemplatesBySpec(urls);
     },
@@ -55,6 +61,9 @@ const createSpec = () => {
     },
     getEnvs() {
       return [...envs];
+    },
+    getId() {
+      return id;
     },
     getEnv(id: string) {
       return envs.find(envItem => envItem.id === id);
@@ -66,45 +75,53 @@ export const createPathFinder: PathfinderBuilder = ({
   resolver,
   data,
   dataKey,
-  basePath,
 }) => {
-  const spec = createSpec();
-
   const storage = getStorage(getStorageAdapter(data, dataKey));
 
   const getGlobalEnv: GlobalEnvGetter = () => storage.getGlobalEnv();
-  const getUrlEnv: UrlEnvGetter = urlId =>
-    storage.getEndpointEnv(urlId) || getGlobalEnv();
+  const getUrlEnv: UrlEnvGetter = (urlId, specId) =>
+    storage.getEndpointEnv(urlId, specId);
+
+  const getSpecs: SpecsGetter = () => storage.getSpecs();
 
   const buildUrl = makeBuildUrl({
     specGetter: findSpec,
     urlEnvGetter: getUrlEnv,
     createUrl,
     parseUrl,
-    basePath,
+    specs: getSpecs(),
   });
 
-  const setGlobalEnv: GlobalEnvSetter = envId => {
-    storage.setGlobalEnv(envId);
+  const setGlobalEnv: GlobalEnvSetter = (envId, specId) => {
+    storage.setGlobalEnv(envId, specId);
   };
 
-  const setUrlEnv: UrlEnvSetter = (urlId, envId) => {
-    storage.setEndpointEnv(urlId, envId);
+  const setUrlEnv: UrlEnvSetter = (urlId, specId, envId) => {
+    storage.setEndpointEnv(urlId, specId, envId);
   };
 
-  const setSpec: SpecSetter = (obj: unknown) => {
+  const setSpecs: SpecsLibSetter = (obj: unknown[]) => {
     try {
-      const { envs, urls } = resolver.parse(obj);
-
-      spec.setEnvs(envs);
-      spec.setUrls(urls);
-      storage.setSpec({ envs, urls });
+      const specs = [];
+      const storageSpec: Spec[] = [];
+      obj.forEach(element => {
+        const spec = createSpec();
+        const resolveSpec = resolver.parse(element);
+        const { envs, urls, id } = resolveSpec;
+        specs.push(resolveSpec);
+        spec.setEnvs(envs);
+        spec.setUrls(urls);
+        spec.setId(id);
+        storageSpec.push(resolveSpec);
+      });
+      storage.setSpecs(storageSpec);
     } catch (e) {
       console.log(e);
     }
   };
 
-  const getSpec: SpecGetter = () => storage.getSpec();
+  const getSpecById: SpecGetter = (id: string) =>
+    storage.getSpecs()?.find(spec => spec.id === id) || null;
 
   const reset: ResetHandler = () => {
     storage.resetEndpointsEnv();
@@ -120,8 +137,9 @@ export const createPathFinder: PathfinderBuilder = ({
 
   return {
     findSpec,
-    getSpec,
-    setSpec,
+    getSpecs,
+    setSpecs,
+    getSpecById,
     buildUrl,
     setGlobalEnv,
     getGlobalEnv,

@@ -74,7 +74,15 @@ Create a new provider component with Pathfinder. Import `storage` and `openApiRe
 
 ```jsx
 import { ReactNode } from 'react';
-import { Pathfinder, openApiResolver, storage } from '@kode-frontend/pathfinder-web';
+import {
+  Pathfinder,
+  openApiResolver,
+  storage,
+} from '@kode-frontend/pathfinder-web';
+
+// Optional initial specifications
+import spec1 from 'path/to/json';
+import spec2 from 'path/to/json';
 
 type Props = {
   children: ReactNode,
@@ -83,36 +91,15 @@ type Props = {
 export const PathfinderProvider = ({ children }: Props) => {
   return (
     <Pathfinder
+      dataKey={`some string`}
       storage={storage}
       resolver={openApiResolver}
       active={process.env.NODE_ENV !== 'production'}
+      // Optional initial specifications
+      defaultSpecs={[spec1, spec2]}
     >
       {children}
     </Pathfinder>
-  );
-};
-```
-
-Create `PathfinderProvider`, for example
-
-```jsx
-import * as React from 'react';
-import { Pathfinder, openApiResolver, storage } from '@kode-frontend/pathfinder-web';
-
-
-type Props = {
-  children: React.ReactNode,
-};
-
-export const PathfinderProvider = ({ children }: Props) => {
-  return (
-    <Pathfinder
-      children={<>{children}</>}
-      resolver={openApiResolver}
-      storage={storage}
-      active={process.env.NODE_ENV !== 'production'}
-      dataKey={'pathfinder-storage-key'}
-    />
   );
 };
 
@@ -144,9 +131,12 @@ const App = () => {
 2. Upload your [OpenAPI 3.0 Specification](https://swagger.io/specification/) file from [Stoplight](https://stoplight.io/).
 3. Configure the base paths for all requests or only for the required ones.
 
-## Development 
+## Development
+
 ### Plop.js
-There is a plop.js tool to create ui-component using a template. You need to set up [extension](https://marketplace.visualstudio.com/items?itemName=SamKirkland.plop-templates) to create components quickly. After the extension installation you should follow these 2 steps: 
+
+There is a plop.js tool to create ui-component using a template. You need to set up [extension](https://marketplace.visualstudio.com/items?itemName=SamKirkland.plop-templates) to create components quickly. After the extension installation you should follow these 2 steps:
+
 1. Create a new folder for your ui-component;
 2. Click on the `New File from Template` in the context menu.
 
@@ -199,13 +189,14 @@ Now, anytime you make changes to your library in `/src` or to the example app's 
 - [x] add storybook
 - [ ] refactor components
 - [ ] add usage examples
-- [ ] add multy specification files support
+- [x] add multy specification files support
 
 ## License
 
 [MIT ©](https://github.com/appKODE/pathfinder-web/LICENCE)
 
-There is plop.js tool to create ui-component using a template. You need to set  up to create components quickly. After an extension installing you should follow next 2 steps: 
+There is plop.js tool to create ui-component using a template. You need to set up to create components quickly. After an extension installing you should follow next 2 steps:
+
 1. Create new folder for ui-component;
 2. Click on `New File from Template` in context menu.
 

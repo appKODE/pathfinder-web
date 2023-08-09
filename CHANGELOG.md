@@ -1,5 +1,12 @@
 
 
+### [0.6.1](https://https//github.com/appKODE/pathfinder-web/compare/v0.6.0...v0.6.1) (2023-08-09)
+
+
+### Bug Fixes
+
+* **readme:** update readme ([7b4b42f](https://https//github.com/appKODE/pathfinder-web/commit/7b4b42fe55400b78b89c102a33865c9bce9460bf))
+
 ## 0.6.0 (2023-08-09)
 
 

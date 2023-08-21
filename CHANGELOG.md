@@ -1,5 +1,12 @@
 
 
+### [0.6.2](https://https//github.com/appKODE/pathfinder-web/compare/v0.6.1...v0.6.2) (2023-08-21)
+
+
+### Bug Fixes
+
+* **mapper:** check if application/json undeffined ([b7b6212](https://https//github.com/appKODE/pathfinder-web/commit/b7b621242141a8759e287c2fd9092bbb0d14b988))
+
 ### [0.6.1](https://https//github.com/appKODE/pathfinder-web/compare/v0.6.0...v0.6.1) (2023-08-09)
 
 

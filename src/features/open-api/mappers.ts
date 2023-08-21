@@ -5,7 +5,7 @@ export const mapResponses = (responses: OperationResponse): Response[] => {
   return codes.map(code => ({
     code,
     examples: Object.keys(
-      responses[code].content?.['application/json'].examples || {},
+      responses[code].content?.['application/json']?.examples || {},
     ),
   }));
 };
